@@ -13,16 +13,18 @@ namespace CSC_330_Project_2
         private List<Reservation> hotelReservations;
         public FrontDesk()
         {
+            hotelRooms = new List<Room>();//instantiate list of hotelRooms
+            hotelReservations = new List<Reservation>();
             String path = "HotelRooms.txt";//path of hotelRooms file
             String content = string.Empty;//create string to hold all content
             content = File.ReadAllText(path);//get all content from hotel rooms file
             String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split lines
-            foreach(String entry in lines)
+            foreach(String entry in lines)//foreach line, split further
             {
-                String[] individual = content.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
+                String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
                 int roomNumber = Int32.Parse(individual[0]);//get room number
                 bool availability = false;//get room availability
-                if(individual[3] == "0")
+                if(individual[3] == "Occupied")
                 {
                     availability = false;
                 }
@@ -33,10 +35,24 @@ namespace CSC_330_Project_2
                 decimal nightlyRate = Decimal.Parse(individual[2]);//get nightlyrate of room
                 int numBeds = Int32.Parse(individual[1]);//get number of beds
                 hotelRooms.Add(new Room(roomNumber, availability, nightlyRate, numBeds));
-                Console.WriteLine(roomNumber);
-                Console.WriteLine(availability);
-                Console.WriteLine(nightlyRate);
-                Console.WriteLine(numBeds);
+            }
+
+            path = "HotelReservations.txt";
+            content = string.Empty;
+            content = File.ReadAllText(path);
+            lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);
+            foreach(String entry in lines)
+            {
+                String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
+                String guestName = individual[0];//get guestname
+                int roomNumber = Int32.Parse(individual[1]);//get and parse roomNumber
+                String date = individual[2];//store date string
+                String[] splitDate = date.Split(new[] { "/" }, StringSplitOptions.None);//split date string for later parsing
+                String time = individual[3];//get time string
+                String[] splitTime = time.Split(new[] { ":" }, StringSplitOptions.None);//split time string for later parsing
+                decimal totalBill = Decimal.Parse(individual[4]);//get and parse totalBill
+                DateTime dateTime = new DateTime(Int32.Parse(splitDate[2]), Int32.Parse(splitDate[0]), Int32.Parse(splitDate[1]), Int32.Parse(splitTime[0]), Int32.Parse(splitTime[1]), Int32.Parse(splitTime[2]));//create DateTime variable
+                hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill));
             }
         }
         public void CreateReservation()
