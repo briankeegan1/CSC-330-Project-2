@@ -14,7 +14,9 @@ namespace CSC_330_Project_2
         public FrontDesk()
         {
             hotelRooms = new List<Room>();//instantiate list of hotelRooms
-            hotelReservations = new List<Reservation>();
+            hotelReservations = new List<Reservation>();//instantiate list of hotelReservations
+
+            /*Get all hotel room data from file*/
             String path = "HotelRooms.txt";//path of hotelRooms file
             String content = string.Empty;//create string to hold all content
             content = File.ReadAllText(path);//get all content from hotel rooms file
@@ -36,7 +38,7 @@ namespace CSC_330_Project_2
                 int numBeds = Int32.Parse(individual[1]);//get number of beds
                 hotelRooms.Add(new Room(roomNumber, availability, nightlyRate, numBeds));
             }
-
+            /*Get all data from Hotel Reservations file*/
             path = "HotelReservations.txt";
             content = string.Empty;
             content = File.ReadAllText(path);
@@ -55,9 +57,16 @@ namespace CSC_330_Project_2
                 hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill));
             }
         }
-        public void CreateReservation()
+        public void CreateReservation(String guestName, int roomNumber, DateTime checkIn, decimal totalBill = 0)
         {
-
+            hotelReservations.Add(new Reservation(guestName, roomNumber, checkIn, totalBill));
+            for(int i = 0; i < hotelRooms.Count; i++)
+            {
+                if(hotelRooms[i].RoomNumber == roomNumber)
+                {
+                    hotelRooms[i].Availability = false;
+                }
+            }
         }
         public void EditReservation()
         {
@@ -70,6 +79,31 @@ namespace CSC_330_Project_2
         public void FinalizeBill()
         {
 
+        }
+        public Room RoomInfo(int roomNum)
+        {
+            bool roomFound = false;
+            for(int i = 0; i < hotelRooms.Count(); i++)//look through entire hotelRooms list
+            {
+                if(hotelRooms[i].RoomNumber == roomNum)//if room has matching room number return room variable
+                {
+                    roomFound = true;
+                    return hotelRooms[i];
+                }
+            }
+            if(!roomFound)//if we never found room, then return an incorrect room
+            {
+                return new Room(-1, false, -200, -1);
+            }
+            return null;//in case all else fails
+        }
+        public Room At(int index)
+        {
+            return hotelRooms[index];
+        }
+        public int NumberOfRooms()//gets number of hotel rooms avaialable
+        {
+            return hotelRooms.Count;
         }
     }
 
@@ -100,7 +134,7 @@ namespace CSC_330_Project_2
         private int numBeds, roomNumber;
         private decimal nightRate;
         private bool availability;
-        public Room(int numBeds, bool availability, decimal nightRate, int roomNumber)
+        public Room(int roomNumber, bool availability, decimal nightRate, int numBeds)
         {
             NumBeds = numBeds;
             Availability = availability;
