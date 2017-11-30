@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "RoomService";
             this.Text = "Room Service";
+            this.Load += new System.EventHandler(this.RoomService_Load);
             this.ResumeLayout(false);
 
         }

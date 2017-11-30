@@ -12,19 +12,26 @@ namespace CSC_330_Project_2
 {
     public partial class MainScreen : Form
     {
+        public static FrontDesk frontDesk;//static variable of frontDesk since it will be used everywhere
+        public static Room hotelRooms;//static variable of Room since hotel room info is needed everywhere
         public MainScreen()
         {
             InitializeComponent();
+            frontDesk = new FrontDesk();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();//hide main form
+            Form next = new RoomService(this);//create next form
+            next.Show();//show next form
         }
 
         private void reservation_Click(object sender, EventArgs e)
         {
-
+            this.Hide();//hide main form
+            Form next = new ReservationMenu(this);//create next form
+            next.Show();//show next form
         }
     }
 }

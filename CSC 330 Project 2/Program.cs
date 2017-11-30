@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSC_330_Project_2
-{
+{   
     static class Program
     {
         /// <summary>

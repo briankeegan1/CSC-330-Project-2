@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CSC_330_Project_2
 {
@@ -12,7 +13,31 @@ namespace CSC_330_Project_2
         private List<Reservation> hotelReservations;
         public FrontDesk()
         {
-            
+            String path = "HotelRooms.txt";//path of hotelRooms file
+            String content = string.Empty;//create string to hold all content
+            content = File.ReadAllText(path);//get all content from hotel rooms file
+            String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split lines
+            foreach(String entry in lines)
+            {
+                String[] individual = content.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
+                int roomNumber = Int32.Parse(individual[0]);//get room number
+                bool availability = false;//get room availability
+                if(individual[3] == "0")
+                {
+                    availability = false;
+                }
+                else
+                {
+                    availability = true;
+                }
+                decimal nightlyRate = Decimal.Parse(individual[2]);//get nightlyrate of room
+                int numBeds = Int32.Parse(individual[1]);//get number of beds
+                hotelRooms.Add(new Room(roomNumber, availability, nightlyRate, numBeds));
+                Console.WriteLine(roomNumber);
+                Console.WriteLine(availability);
+                Console.WriteLine(nightlyRate);
+                Console.WriteLine(numBeds);
+            }
         }
         public void CreateReservation()
         {

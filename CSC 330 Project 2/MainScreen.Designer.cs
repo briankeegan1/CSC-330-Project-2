@@ -34,9 +34,10 @@
             // 
             // reservation
             // 
-            this.reservation.Location = new System.Drawing.Point(77, 78);
+            this.reservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservation.Location = new System.Drawing.Point(42, 32);
             this.reservation.Name = "reservation";
-            this.reservation.Size = new System.Drawing.Size(120, 23);
+            this.reservation.Size = new System.Drawing.Size(200, 80);
             this.reservation.TabIndex = 0;
             this.reservation.Text = "Reservation";
             this.reservation.UseVisualStyleBackColor = true;
@@ -44,9 +45,10 @@
             // 
             // roomservice
             // 
-            this.roomservice.Location = new System.Drawing.Point(77, 149);
+            this.roomservice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomservice.Location = new System.Drawing.Point(42, 149);
             this.roomservice.Name = "roomservice";
-            this.roomservice.Size = new System.Drawing.Size(120, 23);
+            this.roomservice.Size = new System.Drawing.Size(200, 80);
             this.roomservice.TabIndex = 1;
             this.roomservice.Text = "Room Service";
             this.roomservice.UseVisualStyleBackColor = true;

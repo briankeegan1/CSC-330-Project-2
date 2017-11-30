@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateReservation.resx">
+      <DependentUpon>CreateReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +122,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReservationMenu.resx">
+      <DependentUpon>ReservationMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomService.resx">
       <DependentUpon>RoomService.cs</DependentUpon>
     </EmbeddedResource>

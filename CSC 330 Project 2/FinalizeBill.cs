@@ -12,8 +12,10 @@ namespace CSC_330_Project_2
 {
     public partial class FinalizeBill : Form
     {
-        public FinalizeBill()
+        private Form previous;
+        public FinalizeBill(Form form)
         {
+            previous = form;
             InitializeComponent();
         }
     }

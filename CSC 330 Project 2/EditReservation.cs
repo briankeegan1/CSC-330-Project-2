@@ -12,8 +12,10 @@ namespace CSC_330_Project_2
 {
     public partial class EditReservation : Form
     {
-        public EditReservation()
+        public Form previous;
+        public EditReservation(Form form)
         {
+            previous = form;
             InitializeComponent();
         }
     }

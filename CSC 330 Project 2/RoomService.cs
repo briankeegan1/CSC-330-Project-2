@@ -12,9 +12,16 @@ namespace CSC_330_Project_2
 {
     public partial class RoomService : Form
     {
-        public RoomService()
+        private Form previous;
+        public RoomService(Form form)
         {
+            previous = form;
             InitializeComponent();
+        }
+
+        private void RoomService_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

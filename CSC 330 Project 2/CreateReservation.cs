@@ -12,8 +12,10 @@ namespace CSC_330_Project_2
 {
     public partial class CreateReservation : Form
     {
-        public CreateReservation()
+        private Form previous;
+        public CreateReservation(Form form)
         {
+            previous = form;
             InitializeComponent();
         }
     }
