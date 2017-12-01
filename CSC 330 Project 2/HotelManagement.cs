@@ -65,6 +65,7 @@ namespace CSC_330_Project_2
                 if(hotelRooms[i].RoomNumber == roomNumber)
                 {
                     hotelRooms[i].Availability = false;
+                    break;
                 }
             }
         }
@@ -80,7 +81,7 @@ namespace CSC_330_Project_2
         {
 
         }
-        public Room RoomInfo(int roomNum)
+        public Room RoomInfo(int roomNum)//get room info from room number
         {
             bool roomFound = false;
             for(int i = 0; i < hotelRooms.Count(); i++)//look through entire hotelRooms list
@@ -97,13 +98,21 @@ namespace CSC_330_Project_2
             }
             return null;//in case all else fails
         }
-        public Room At(int index)
+        public Room RoomAt(int index)//return room at index in list
         {
             return hotelRooms[index];
         }
         public int NumberOfRooms()//gets number of hotel rooms avaialable
         {
             return hotelRooms.Count;
+        }
+        public Reservation ReservationAt(int index)//get reservation at index
+        {
+            return hotelReservations[index];
+        }
+        public int NumberOfReservations()
+        {
+            return hotelReservations.Count;
         }
     }
 

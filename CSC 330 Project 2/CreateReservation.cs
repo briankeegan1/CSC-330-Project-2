@@ -24,7 +24,7 @@ namespace CSC_330_Project_2
             InitializeComponent();
             for(int i = 0; i < MainScreen.frontDesk.NumberOfRooms(); i++)
             {
-                roomList.Items.Add(MainScreen.frontDesk.At(i).RoomNumber);
+                roomList.Items.Add(MainScreen.frontDesk.RoomAt(i).RoomNumber);
             }
         }
 

@@ -110,6 +110,12 @@
     <EmbeddedResource Include="CreateReservation.resx">
       <DependentUpon>CreateReservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReservation.resx">
+      <DependentUpon>EditReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>

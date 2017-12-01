@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nightlyRateLabel = new System.Windows.Forms.Label();
+            this.availabilityLabel = new System.Windows.Forms.Label();
+            this.numBedLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.roomList = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numBedLabel = new System.Windows.Forms.Label();
-            this.availabilityLabel = new System.Windows.Forms.Label();
-            this.nightlyRateLabel = new System.Windows.Forms.Label();
             this.createReservationButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,6 +62,72 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Info";
+            // 
+            // nightlyRateLabel
+            // 
+            this.nightlyRateLabel.AutoSize = true;
+            this.nightlyRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nightlyRateLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.nightlyRateLabel.Location = new System.Drawing.Point(267, 86);
+            this.nightlyRateLabel.Name = "nightlyRateLabel";
+            this.nightlyRateLabel.Size = new System.Drawing.Size(35, 20);
+            this.nightlyRateLabel.TabIndex = 6;
+            this.nightlyRateLabel.Text = "N/A";
+            // 
+            // availabilityLabel
+            // 
+            this.availabilityLabel.AutoSize = true;
+            this.availabilityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availabilityLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.availabilityLabel.Location = new System.Drawing.Point(253, 52);
+            this.availabilityLabel.Name = "availabilityLabel";
+            this.availabilityLabel.Size = new System.Drawing.Size(35, 20);
+            this.availabilityLabel.TabIndex = 5;
+            this.availabilityLabel.Text = "N/A";
+            // 
+            // numBedLabel
+            // 
+            this.numBedLabel.AutoSize = true;
+            this.numBedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numBedLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.numBedLabel.Location = new System.Drawing.Point(296, 20);
+            this.numBedLabel.Name = "numBedLabel";
+            this.numBedLabel.Size = new System.Drawing.Size(35, 20);
+            this.numBedLabel.TabIndex = 4;
+            this.numBedLabel.Text = "N/A";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(162, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "NightlyRate: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(162, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Availability:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(162, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Number of Beds:";
             // 
             // roomList
             // 
@@ -92,9 +158,11 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(165, 54);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker1.Size = new System.Drawing.Size(123, 20);
             this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -122,66 +190,6 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reservation Information";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(162, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Number of Beds:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(162, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Availability:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(162, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "NightlyRate: ";
-            // 
-            // numBedLabel
-            // 
-            this.numBedLabel.AutoSize = true;
-            this.numBedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBedLabel.Location = new System.Drawing.Point(296, 20);
-            this.numBedLabel.Name = "numBedLabel";
-            this.numBedLabel.Size = new System.Drawing.Size(35, 20);
-            this.numBedLabel.TabIndex = 4;
-            this.numBedLabel.Text = "N/A";
-            // 
-            // availabilityLabel
-            // 
-            this.availabilityLabel.AutoSize = true;
-            this.availabilityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availabilityLabel.Location = new System.Drawing.Point(253, 52);
-            this.availabilityLabel.Name = "availabilityLabel";
-            this.availabilityLabel.Size = new System.Drawing.Size(35, 20);
-            this.availabilityLabel.TabIndex = 5;
-            this.availabilityLabel.Text = "N/A";
-            // 
-            // nightlyRateLabel
-            // 
-            this.nightlyRateLabel.AutoSize = true;
-            this.nightlyRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nightlyRateLabel.Location = new System.Drawing.Point(267, 86);
-            this.nightlyRateLabel.Name = "nightlyRateLabel";
-            this.nightlyRateLabel.Size = new System.Drawing.Size(35, 20);
-            this.nightlyRateLabel.TabIndex = 6;
-            this.nightlyRateLabel.Text = "N/A";
             // 
             // createReservationButton
             // 
