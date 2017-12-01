@@ -94,5 +94,11 @@ namespace CSC_330_Project_2
             this.Dispose();
             previous.Show();
         }
+
+        private void FinalizeBill_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
+        }
     }
 }

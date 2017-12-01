@@ -62,7 +62,9 @@
             this.Controls.Add(this.roomservice);
             this.Controls.Add(this.reservation);
             this.Name = "MainScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main Screen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainScreen_FormClosed);
             this.ResumeLayout(false);
 
         }

@@ -85,5 +85,11 @@ namespace CSC_330_Project_2
             this.Dispose();
             previous.Show();
         }
+
+        private void CreateReservation_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
+        }
     }
 }

@@ -87,7 +87,9 @@
             this.Controls.Add(this.createReservation);
             this.Controls.Add(this.backButton);
             this.Name = "ReservationMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservationMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReservationMenu_FormClosed);
             this.ResumeLayout(false);
 
         }

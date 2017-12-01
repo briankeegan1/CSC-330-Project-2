@@ -45,5 +45,11 @@ namespace CSC_330_Project_2
             Form next = new FinalizeBill(this);//create next form
             next.Show();//show next form
         }
+
+        private void ReservationMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
+        }
     }
 }
