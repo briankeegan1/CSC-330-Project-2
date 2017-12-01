@@ -68,7 +68,22 @@ namespace CSC_330_Project_2
 
         private void createReservationButton_Click(object sender, EventArgs e)
         {
-            MainScreen.frontDesk.CreateReservation(guestName, roomNumber, checkIn, 0);
+            if(dateTimePicker1.Value == null || textBox1.Text == null || roomList.SelectedItem == null)
+            {
+                errorLabel.Text = "Not all data\nfields have been\n filled.\nReservation creation\nfailed.";
+            }
+            else
+            {
+                MainScreen.frontDesk.CreateReservation(guestName, roomNumber, checkIn, 0);//create new reservations
+                MainScreen.frontDesk.UpdateFiles();//update files
+                ReloadList();
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            previous.Show();
         }
     }
 }

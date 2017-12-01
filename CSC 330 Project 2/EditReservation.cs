@@ -52,11 +52,10 @@ namespace CSC_330_Project_2
                     roomNumber = -1;
                 }
             }
-            catch(Exception E)
+            catch
             {
                 number.Text = String.Empty;
             }
-         
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace CSC_330_Project_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < MainScreen.frontDesk.NumberOfReservations(); i++)
+            for(int i = 0; i < MainScreen.frontDesk.NumberOfReservations(); i++)//search through all hotel reservations
             {
                 if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
@@ -86,16 +85,18 @@ namespace CSC_330_Project_2
                     deleteRes.Enabled = true;
                     ReloadList();//reload list of available rooms
                 }
-                else if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && MainScreen.frontDesk.ReservationAt(i).CheckedIn)
+                else if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if guest already checked in
                 {
                     //reservation not found
                     button1.BackColor = Color.SkyBlue;
                     errorLabel.Text = "Guest already\nchecked in.\nReservation cannot\n be modified";
+                    break;
                 }
                 else
                 {
                     errorLabel.Text = "Invalid Information\nentered.";
                     button1.BackColor = Color.PaleVioletRed;
+                    break;
                 }
             }
         }
@@ -139,6 +140,7 @@ namespace CSC_330_Project_2
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
             this.Dispose();
             previous.Show();
         }

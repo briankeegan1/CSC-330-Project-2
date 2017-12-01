@@ -43,6 +43,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.createReservationButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -186,6 +187,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.RosyBrown;
+            this.groupBox2.Controls.Add(this.errorLabel);
             this.groupBox2.Controls.Add(this.createReservationButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
@@ -218,6 +220,15 @@
             this.backButton.TabIndex = 18;
             this.backButton.Text = "<--";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(295, 16);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.TabIndex = 7;
             // 
             // CreateReservation
             // 
@@ -254,5 +265,6 @@
         private System.Windows.Forms.Label numBedLabel;
         private System.Windows.Forms.Button createReservationButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

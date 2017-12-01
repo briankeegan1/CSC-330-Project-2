@@ -19,47 +19,61 @@ namespace CSC_330_Project_2
             /*Get all hotel room data from file*/
             String path = "HotelRooms.txt";//path of hotelRooms file
             String content = string.Empty;//create string to hold all content
-            content = File.ReadAllText(path);//get all content from hotel rooms file
-            String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split lines
-            foreach(String entry in lines)//foreach line, split further
+            if (File.Exists(path))
             {
-                String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
-                int roomNumber = Int32.Parse(individual[0]);//get room number
-                bool availability = false;//get room availability
-                if(individual[3] == "Occupied")
+                content = File.ReadAllText(path);//get all content from hotel rooms file
+                String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split lines
+                foreach (String entry in lines)//foreach line, split further
                 {
-                    availability = false;
+                    String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
+                    int roomNumber = Int32.Parse(individual[0]);//get room number
+                    bool availability = false;//get room availability
+                    if (individual[3] == "Occupied")
+                    {
+                        availability = false;
+                    }
+                    else
+                    {
+                        availability = true;
+                    }
+                    decimal nightlyRate = Decimal.Parse(individual[2]);//get nightlyrate of room
+                    int numBeds = Int32.Parse(individual[1]);//get number of beds
+                    hotelRooms.Add(new Room(roomNumber, availability, nightlyRate, numBeds));
                 }
-                else
-                {
-                    availability = true;
-                }
-                decimal nightlyRate = Decimal.Parse(individual[2]);//get nightlyrate of room
-                int numBeds = Int32.Parse(individual[1]);//get number of beds
-                hotelRooms.Add(new Room(roomNumber, availability, nightlyRate, numBeds));
+            }
+            else
+            {
+                Environment.Exit(1);
             }
             /*Get all data from Hotel Reservations file*/
-            path = "HotelReservations.txt";
+            path = "CurrentHotelReservations.txt";
             content = string.Empty;
-            content = File.ReadAllText(path);
-            lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);
-            foreach(String entry in lines)
+            if(File.Exists(path))
             {
-                String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
-                String guestName = individual[0];//get guestname
-                int roomNumber = Int32.Parse(individual[1]);//get and parse roomNumber
-                String date = individual[2];//store date string
-                String[] splitDate = date.Split(new[] { "/" }, StringSplitOptions.None);//split date string for later parsing
-                String time = individual[3];//get time string
-                String[] splitTime = time.Split(new[] { ":" }, StringSplitOptions.None);//split time string for later parsing
-                decimal totalBill = Decimal.Parse(individual[4]);//get and parse totalBill
-                DateTime dateTime = new DateTime(Int32.Parse(splitDate[2]), Int32.Parse(splitDate[0]), Int32.Parse(splitDate[1]), Int32.Parse(splitTime[0]), Int32.Parse(splitTime[1]), Int32.Parse(splitTime[2]));//create DateTime variable
-                bool checkedIn;
-                if (individual[5] == "false")
-                    checkedIn = false;
-                else
-                    checkedIn = true;
-                hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill, checkedIn));
+                content = File.ReadAllText(path);
+                String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);
+                foreach (String entry in lines)
+                {
+                    String[] individual = entry.Split(new[] { "\t" }, StringSplitOptions.None);//split lines into individual parts
+                    String guestName = individual[0];//get guestname
+                    int roomNumber = Int32.Parse(individual[1]);//get and parse roomNumber
+                    String date = individual[2];//store date string
+                    String[] splitDate = date.Split(new[] { "/" }, StringSplitOptions.None);//split date string for later parsing
+                    String time = individual[3];//get time string
+                    String[] splitTime = time.Split(new[] { ":" }, StringSplitOptions.None);//split time string for later parsing
+                    decimal totalBill = Decimal.Parse(individual[4]);//get and parse totalBill
+                    DateTime dateTime = new DateTime(Int32.Parse(splitDate[2]), Int32.Parse(splitDate[0]), Int32.Parse(splitDate[1]), Int32.Parse(splitTime[0]), Int32.Parse(splitTime[1]), Int32.Parse(splitTime[2]));//create DateTime variable
+                    bool checkedIn;
+                    if (individual[5] == "false")
+                        checkedIn = false;
+                    else
+                        checkedIn = true;
+                    hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill, checkedIn));
+                }
+            }
+            else
+            {
+                File.Create(path);
             }
         }
         public void CreateReservation(String guestName, int roomNumber, DateTime checkIn, decimal totalBill = 0)
@@ -100,9 +114,69 @@ namespace CSC_330_Project_2
                 }
             }
         }
-        public void FinalizeBill()
+        public void FinalizeBill(decimal totalBill, int roomNumber)
         {
+            Reservation temp = ReservationInfo(roomNumber);
+            String path = "PastHotelReservations.txt";//path of hotelRooms file
+            if (File.Exists(path))
+            {
+                String content = temp.CustomerName + "\t" + temp.CheckInDateTime + "\t" + totalBill + "\t" + System.DateTime.Now + "\r\n";
+                File.AppendAllText(path, content);
+            }
+            RoomInfo(roomNumber).Availability = true;
+            hotelReservations.Remove(temp);
+        }
+        public void UpdateFiles()
+        {
+            String path = "HotelRooms.txt";//path of hotelRooms file
+            String content = string.Empty;//create string to hold all content
+            if(File.Exists(path))
+            {
+                String info = string.Empty;
+                for (int i = 0; i < NumberOfRooms(); i++)//get all room info
+                {
+                    Room temp = hotelRooms[i];
+                    info = info + temp.RoomNumber + "\t" + temp.NumBeds + "\t" + temp.NightRate + "\t" + (temp.Availability?"Available":"Occupied");
+                    if(i != NumberOfRooms() - 1)//if we are not at the last entry add the next line character
+                    {
+                        info = info + "\r\n";
+                    }
+                    else//otherwise leave total content alone
+                    {
 
+                    }
+                }
+                File.WriteAllText(path, info);//write to file
+            }
+            
+            /*Output all data to Hotel Reservations file*/
+            path = "CurrentHotelReservations.txt";
+            content = string.Empty;
+            if (File.Exists(path))
+            {
+                String info = string.Empty;
+                for (int i = 0; i < NumberOfReservations(); i++)
+                {
+                    Reservation temp = hotelReservations[i];
+                    info = info + temp.CustomerName + "\t" + temp.RoomNumber + "\t" + temp.CheckInDateTime.Month + '/' + temp.CheckInDateTime.Day + '/' + temp.CheckInDateTime.Year + "\t" + temp.CheckInDateTime.Hour + ':' + temp.CheckInDateTime.Minute + ':' + temp.CheckInDateTime.Second + "\t" + temp.TotalBill + "\t" + temp.CheckedIn;
+                    if (i != NumberOfReservations() - 1)//if we are not at the last entry add the next line character
+                    {
+                        info = info + "\r\n";
+                    }
+                    else//otherwise leave total content alone
+                    {
+
+                    }
+                }
+                if(info == string.Empty)//if all guests are checked out, delete the current reservations file
+                {
+                    File.Delete(path);
+                }
+                else//otherwise write over the current reservations file
+                {
+                    File.WriteAllText(path, info);
+                }
+            }
         }
         public Room RoomInfo(int roomNum)//get room info from room number
         {

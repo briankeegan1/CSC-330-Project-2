@@ -116,6 +116,9 @@
     <EmbeddedResource Include="EditReservation.resx">
       <DependentUpon>EditReservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinalizeBill.resx">
+      <DependentUpon>FinalizeBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
