@@ -22,9 +22,16 @@ namespace CSC_330_Project_2
         {
             previous = form;
             InitializeComponent();
-            for(int i = 0; i < MainScreen.frontDesk.NumberOfRooms(); i++)
+            ReloadList();
+        }
+
+        private void ReloadList()
+        {
+            roomList.Items.Clear();
+            for (int j = 0; j < MainScreen.frontDesk.NumberOfRooms(); j++)//populate room list 
             {
-                roomList.Items.Add(MainScreen.frontDesk.RoomAt(i).RoomNumber);
+                if (MainScreen.frontDesk.RoomAt(j).Availability)//only place rooms in list if it is available
+                    roomList.Items.Add(MainScreen.frontDesk.RoomAt(j).RoomNumber);
             }
         }
 

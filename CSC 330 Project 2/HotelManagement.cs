@@ -54,12 +54,17 @@ namespace CSC_330_Project_2
                 String[] splitTime = time.Split(new[] { ":" }, StringSplitOptions.None);//split time string for later parsing
                 decimal totalBill = Decimal.Parse(individual[4]);//get and parse totalBill
                 DateTime dateTime = new DateTime(Int32.Parse(splitDate[2]), Int32.Parse(splitDate[0]), Int32.Parse(splitDate[1]), Int32.Parse(splitTime[0]), Int32.Parse(splitTime[1]), Int32.Parse(splitTime[2]));//create DateTime variable
-                hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill));
+                bool checkedIn;
+                if (individual[5] == "false")
+                    checkedIn = false;
+                else
+                    checkedIn = true;
+                hotelReservations.Add(new Reservation(guestName, roomNumber, dateTime, totalBill, checkedIn));
             }
         }
         public void CreateReservation(String guestName, int roomNumber, DateTime checkIn, decimal totalBill = 0)
         {
-            hotelReservations.Add(new Reservation(guestName, roomNumber, checkIn, totalBill));
+            hotelReservations.Add(new Reservation(guestName, roomNumber, checkIn, totalBill, false));//create new reservation, guests are checked in by front desk
             for(int i = 0; i < hotelRooms.Count; i++)
             {
                 if(hotelRooms[i].RoomNumber == roomNumber)
@@ -69,13 +74,31 @@ namespace CSC_330_Project_2
                 }
             }
         }
-        public void EditReservation()
+        public void EditReservation(String guestName, int roomNumber, DateTime checkIn)
         {
+            Reservation reservation;
+            for(int i = 0; i < NumberOfReservations(); i++)
+            {
+                if(ReservationAt(i).CustomerName == guestName)
+                {
+                    reservation = ReservationAt(i);//find correct reservation to edit
+                    reservation.CheckInDateTime = checkIn;//change checkIn time of reservation
+                    RoomInfo(reservation.RoomNumber).Availability = true;//change availability of old room
+                    RoomInfo(roomNumber).Availability = false;//change availability of new room
+                    reservation.RoomNumber = roomNumber;//change room number
+                }
+            }
 
         }
-        public void DeleteReservation()
+        public void DeleteReservation(String guestName)
         {
-
+            for(int i = 0; i < NumberOfReservations(); i++)
+            {
+                if(guestName == hotelReservations[i].CustomerName)
+                {
+                    hotelReservations.RemoveAt(i);
+                }
+            }
         }
         public void FinalizeBill()
         {
@@ -105,6 +128,17 @@ namespace CSC_330_Project_2
         public int NumberOfRooms()//gets number of hotel rooms avaialable
         {
             return hotelRooms.Count;
+        }
+        public Reservation ReservationInfo(int roomNumber)
+        {
+            for(int i = 0; i < NumberOfReservations(); i++)
+            {
+                if(hotelReservations[i].RoomNumber == roomNumber)
+                {
+                    return hotelReservations[i];
+                }
+            }
+            return null;
         }
         public Reservation ReservationAt(int index)//get reservation at index
         {
@@ -203,12 +237,14 @@ namespace CSC_330_Project_2
         private int roomNumber;
         private DateTime checkinDateTime;
         private decimal totalBill;
-        public Reservation(String customerName, int roomNumber, DateTime checkinDateTime, decimal totalBill)
+        private bool checkedIn;
+        public Reservation(String customerName, int roomNumber, DateTime checkinDateTime, decimal totalBill, bool checkedIn)
         {
             CustomerName = customerName;
             RoomNumber = roomNumber;
             CheckInDateTime = checkinDateTime;
             TotalBill = totalBill;
+            CheckedIn = checkedIn;
         }
         public String CustomerName
         {
@@ -254,6 +290,18 @@ namespace CSC_330_Project_2
                 totalBill = value;
             }
         }
+        public bool CheckedIn
+        {
+            get
+            {
+                return checkedIn;
+            }
+            set
+            {
+                checkedIn = value;
+            }
+        }
+
     }
 
     public class Order//hold room service order information

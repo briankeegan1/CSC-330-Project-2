@@ -14,29 +14,45 @@ namespace CSC_330_Project_2
     {
         private String guestName;
         private int roomNumber;
+        private DateTime date;
         private Form previous;
         public EditReservation(Form form)
         {
             previous = form;
             InitializeComponent();
-            checkIn.Enabled = false;
+            checkIn.Enabled = false;//disable changeable variables
             roomList.Enabled = false;
+            changeRes.Enabled = false;
+            deleteRes.Enabled = false;
         }
 
+        private void ReloadList()
+        {
+            roomList.Items.Clear();
+            for (int j = 0; j < MainScreen.frontDesk.NumberOfRooms(); j++)//populate room list 
+            {
+                if (MainScreen.frontDesk.RoomAt(j).Availability)//only place rooms in list if it is available
+                    roomList.Items.Add(MainScreen.frontDesk.RoomAt(j).RoomNumber);
+            }
+        }
         private void name_TextChanged(object sender, EventArgs e)
         {
-            guestName = name.Text;
+            guestName = name.Text;//store guest name
         }
 
         private void number_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if(Int32.TryParse(number.Text, out roomNumber))
+                if(Int32.TryParse(number.Text, out roomNumber))//try to parse room number, if something other than a number is input then error will occur
                 {
                 }
+                else
+                {
+                    roomNumber = -1;
+                }
             }
-            catch
+            catch(Exception E)
             {
                 number.Text = String.Empty;
             }
@@ -45,34 +61,57 @@ namespace CSC_330_Project_2
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+            if(checkIn.Value < System.DateTime.Now)//check that chosen date an time are not in the past
+            {
+                checkIn.Value = System.DateTime.Now;
+                errorLabel.Text = "Past dates are\nnot acceptable\nchanges to reservation.";
+            }
+            else//if valid date and time entered, then store value for later reservation changing
+            {
+                date = checkIn.Value;//store chenged date
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             for(int i = 0; i < MainScreen.frontDesk.NumberOfReservations(); i++)
             {
-                if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber))//if entered information was correct
+                if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
+                    button1.BackColor = Color.White;
                     checkIn.Enabled = true;//enable the datetimePicker
                     checkIn.Value = MainScreen.frontDesk.ReservationAt(i).CheckInDateTime;//get value of reservation
                     roomList.Enabled = true;//enable the room list
-                    for (int j = 0; j < MainScreen.frontDesk.NumberOfRooms(); j++)//populate room list 
-                    {
-                        roomList.Items.Add(MainScreen.frontDesk.RoomAt(j).RoomNumber);
-                    }
+                    changeRes.Enabled = true;//enable buttons
+                    deleteRes.Enabled = true;
+                    ReloadList();//reload list of available rooms
+                }
+                else if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && MainScreen.frontDesk.ReservationAt(i).CheckedIn)
+                {
+                    //reservation not found
+                    button1.BackColor = Color.SkyBlue;
+                    errorLabel.Text = "Guest already\nchecked in.\nReservation cannot\n be modified";
+                }
+                else
+                {
+                    errorLabel.Text = "Invalid Information\nentered.";
+                    button1.BackColor = Color.PaleVioletRed;
                 }
             }
         }
 
         private void changeRes_Click(object sender, EventArgs e)
         {
-
+            MainScreen.frontDesk.EditReservation(guestName, roomNumber, date);
+            number.Text = roomNumber.ToString();
+            ReloadList();
         }
 
         private void deleteRes_Click(object sender, EventArgs e)
         {
-
+            MainScreen.frontDesk.DeleteReservation(guestName);//possibly add textbox to show success
+            this.Dispose();
+            previous.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -95,6 +134,13 @@ namespace CSC_330_Project_2
             {
                 availabilityLabel.Text = "Taken";
             }
+            nightlyRateLabel.Text = temp.NightRate.ToString();//change nightly rate label
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            previous.Show();
         }
     }
 }
