@@ -226,12 +226,12 @@ namespace CSC_330_Project_2
 
     public class Kitchen//manange all kitchen tasks
     {
+        Dictionary<String, decimal> foodItems;
+        Dictionary<String, decimal> drinksItems;
         private List<Order> customerOrders;
-        private Menu kitchenMenu;
         public Kitchen()
         {
             customerOrders = new List<Order>();
-            kitchenMenu = new Menu();//instantiate manu object
             /*Fill out customerOrders with any orders that were not fulfilled file*/
             String path = "CustomerOrders.txt";//path of drink items
             if (File.Exists(path))
@@ -246,6 +246,68 @@ namespace CSC_330_Project_2
                     customerOrders.Add(new Order(Int32.Parse(individual[0]), food, Decimal.Parse(individual[2])));//store order data
                 }
             }
+            //Instantiate and retrieve all drink and food items from files
+            foodItems = new Dictionary<string, decimal>();
+            drinksItems = new Dictionary<string, decimal>();
+            path = "HotelDrinksMenu.txt";//path of drink items
+            if (File.Exists(path))
+            {
+                String content = String.Empty;
+                content = File.ReadAllText(path);
+                String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
+                foreach (String ind in lines)
+                {
+                    String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
+                    drinksItems.Add(individual[0], Decimal.Parse(individual[1]));//add drink items to drink menus
+                }
+            }
+            //get items from food and drink files
+            int hour = System.DateTime.Now.Hour;//getcurrent hour to setermine menu
+            if (hour >= 0 && hour <= 11)//if it is breakfast time, load the breakfast menu
+            {
+                path = "BreakfastFoodMenu.txt";//path of food items
+                if (File.Exists(path))
+                {
+                    String content = String.Empty;
+                    content = File.ReadAllText(path);
+                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
+                    foreach (String ind in lines)
+                    {
+                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
+                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
+                    }
+                }
+            }
+            else if (hour >= 12 && hour <= 17)//if it is lunch time, load lunch menu
+            {
+                path = "LunchFoodMenu.txt";//path of food items
+                if (File.Exists(path))
+                {
+                    String content = String.Empty;
+                    content = File.ReadAllText(path);
+                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
+                    foreach (String ind in lines)
+                    {
+                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
+                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
+                    }
+                }
+            }
+            else//if it is dinner time, load the dinner contents
+            {
+                path = "DinnerFoodMenu.txt";//path of food items
+                if (File.Exists(path))
+                {
+                    String content = String.Empty;
+                    content = File.ReadAllText(path);
+                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
+                    foreach (String ind in lines)
+                    {
+                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
+                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
+                    }
+                }
+            }
         }
         public void CreateOrder(Order customerOrder)
         {
@@ -258,6 +320,26 @@ namespace CSC_330_Project_2
         public void UpdateBill()
         {
 
+        }
+        //return dollar value of passed food item name
+        public decimal foodAt(String key)
+        {
+            return foodItems[key];
+        }
+        //return dollar value of passed drink item name
+        public decimal drinkAt(String key)
+        {
+            return drinksItems[key];
+        }
+        //return array of keys to be used for iterating through Dictionary
+        public String[] getFoodKeys()
+        {
+            return foodItems.Keys.ToArray<String>();
+        }
+        //return array of keys to be used for iterating through Dictionary
+        public String[] getDrinkKeys()
+        {
+            return drinksItems.Keys.ToArray<String>();
         }
     }
 
@@ -448,87 +530,6 @@ namespace CSC_330_Project_2
             {
                 fulfilled = value;
             }
-        }
-    }
-
-    public class Menu//hold all menu items(Incomplete)
-    {
-        Dictionary<String, decimal> foodItems;
-        Dictionary<String, decimal> drinksItems;
-        //initialize the menu based on the current time of day
-        public Menu()
-        {
-            foodItems = new Dictionary<string, decimal>();
-            drinksItems = new Dictionary<string, decimal>();
-            String path = "HotelDrinksMenu.txt";//path of drink items
-            if (File.Exists(path))
-            {
-                String content = String.Empty;
-                content = File.ReadAllText(path);
-                String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
-                foreach (String ind in lines)
-                {
-                    String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
-                    drinksItems.Add(individual[0], Decimal.Parse(individual[1]));//add drink items to drink menus
-                }
-            }
-            //get items from food and drink files
-            int hour = System.DateTime.Now.Hour;//getcurrent hour to setermine menu
-            if (hour >= 0 && hour <= 11)//if it is breakfast time, load the breakfast menu
-            {
-                path = "BreakfastFoodMenu.txt";//path of food items
-                if(File.Exists(path))
-                {
-                    String content = String.Empty;
-                    content = File.ReadAllText(path);
-                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
-                    foreach(String ind in lines)
-                    {
-                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
-                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
-                    }
-                }
-            }
-            else if(hour >= 12 && hour <= 17)//if it is lunch time, load lunch menu
-            {
-                path = "LunchFoodMenu.txt";//path of food items
-                if (File.Exists(path))
-                {
-                    String content = String.Empty;
-                    content = File.ReadAllText(path);
-                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
-                    foreach (String ind in lines)
-                    {
-                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
-                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
-                    }
-                }
-            }
-            else//if it is dinner time, load the dinner contents
-            {
-                path = "DinnerFoodMenu.txt";//path of food items
-                if (File.Exists(path))
-                {
-                    String content = String.Empty;
-                    content = File.ReadAllText(path);
-                    String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
-                    foreach (String ind in lines)
-                    {
-                        String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
-                        foodItems.Add(individual[0], Decimal.Parse(individual[1]));//add food item to dictionary of food items
-                    }
-                }
-            }
-        }
-        //return dollar value of passed food item name
-        public decimal foodAt(String key)
-        {
-            return foodItems[key];
-        }
-        //return dollar value of passed drink item name
-        public decimal drinkAt(String key)
-        {
-            return drinksItems[key];
         }
     }
 }
