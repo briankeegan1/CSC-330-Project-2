@@ -14,10 +14,12 @@ namespace CSC_330_Project_2
     {
         public static FrontDesk frontDesk;//static variable of frontDesk since it will be used everywhere
         public static Room hotelRooms;//static variable of Room since hotel room info is needed everywhere
+        public static Kitchen kitchen;//static variable of Kitchen since kitchen info is needed in a number of scripts
         public MainScreen()
         {
             InitializeComponent();
             frontDesk = new FrontDesk();
+            kitchen = new Kitchen();
         }
 
         private void button2_Click(object sender, EventArgs e)

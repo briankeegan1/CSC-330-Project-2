@@ -12,9 +12,17 @@ namespace CSC_330_Project_2
 {
     public partial class KitchenMenu : Form
     {
-        public KitchenMenu()
+        private Form previous;
+        public KitchenMenu(Form form)
         {
             InitializeComponent();
+            previous = form;
+        }
+
+        private void KitchenMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
         }
     }
 }

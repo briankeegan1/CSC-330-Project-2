@@ -12,9 +12,11 @@ namespace CSC_330_Project_2
 {
     public partial class EditOrder : Form
     {
-        public EditOrder()
+        private Form previous;
+        public EditOrder(Form form)
         {
             InitializeComponent();
+            previous = form;
         }
 
     }

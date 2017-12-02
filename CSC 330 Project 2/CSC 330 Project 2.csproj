@@ -119,6 +119,9 @@
     <EmbeddedResource Include="FinalizeBill.resx">
       <DependentUpon>FinalizeBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KitchenMenu.resx">
+      <DependentUpon>KitchenMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>

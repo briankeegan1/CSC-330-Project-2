@@ -23,5 +23,31 @@ namespace CSC_330_Project_2
         {
 
         }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form next = new KitchenMenu(this);
+            next.Show();
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form next = new CreateOrder(this);
+            next.Show();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form next = new EditOrder(this);
+            next.Show();
+        }
+
+        private void RoomService_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
