@@ -92,10 +92,10 @@ namespace CSC_330_Project_2
 
         private void deleteOrderButton_Click(object sender, EventArgs e)//for deleting orders
         {
-            MainScreen.kitchen.DeleteOrder(foundOrders[ordersList.SelectedIndex]);
-            foundOrders.RemoveAt(ordersList.SelectedIndex);
-            OrderTotalUpdate();
-            UpdateOrdersList();
+            MainScreen.kitchen.DeleteOrder(foundOrders[ordersList.SelectedIndex]);//call delete function to remove order from the class
+            foundOrders.RemoveAt(ordersList.SelectedIndex);//remove order form list of foundOrders
+            OrderTotalUpdate();//update order total
+            UpdateOrdersList();//update orderList
         }
 
         private void EditOrder_FormClosing(object sender, FormClosingEventArgs e)
@@ -106,21 +106,24 @@ namespace CSC_330_Project_2
 
         private void ordersList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            deleteOrder.Enabled = true;//enable other controls
-            foodList.Enabled = true;
-            drinkList.Enabled = true;
-            sendKitchen.Enabled = true;
-            //get order details, and then clear list and place new order items onto list
-            Order temp = foundOrders[ordersList.SelectedIndex];
-            clearingLists = true;
-            currentOrderList.Items.Clear();
-            clearingLists = false;
-            String[] items = temp.FoodItems;
-            foreach(String str in items)
+            if(!clearingLists)
             {
-                currentOrderList.Items.Add(str);
+                deleteOrder.Enabled = true;//enable other controls
+                foodList.Enabled = true;
+                drinkList.Enabled = true;
+                sendKitchen.Enabled = true;
+                //get order details, and then clear list and place new order items onto list
+                Order temp = foundOrders[ordersList.SelectedIndex];
+                clearingLists = true;
+                currentOrderList.Items.Clear();
+                clearingLists = false;
+                String[] items = temp.FoodItems;
+                foreach (String str in items)
+                {
+                    currentOrderList.Items.Add(str);
+                }
+                OrderTotalUpdate();//update total
             }
-            OrderTotalUpdate();//update total
         }
 
         private void foodList_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,33 +196,24 @@ namespace CSC_330_Project_2
 
         private void addOrder_Click(object sender, EventArgs e)
         {
-            currentOrderList.Items.Add(item);
-            OrderTotalUpdate();
-        }
-
-        private void deleteOrder_Click(object sender, EventArgs e)
-        {
-            clearingLists = true;
-            currentOrderList.Items.RemoveAt(currentOrderList.SelectedIndex);
-            clearingLists = false;
-            OrderTotalUpdate();
-            UpdateOrdersList();
+            currentOrderList.Items.Add(item);//add item to current order
+            OrderTotalUpdate();//update total
         }
 
         private void sendKitchen_Click(object sender, EventArgs e)
         {
-            String[] tempList = new String[currentOrderList.Items.Count];
-            for(int i = 0; i < currentOrderList.Items.Count; i++)
+            String[] tempList = new String[currentOrderList.Items.Count];//create a temporary list to hold order items
+            for(int i = 0; i < currentOrderList.Items.Count; i++)//store all items in current order
             {
                 tempList[i] = currentOrderList.Items[i].ToString();
             }
-            MainScreen.kitchen.EditOrder(foundOrders[ordersList.SelectedIndex], new Order(roomNumber, tempList, Decimal.Parse(orderTotal.Text)));
-            OrderTotalUpdate();
+            MainScreen.kitchen.EditOrder(foundOrders[ordersList.SelectedIndex], new Order(roomNumber, tempList, Decimal.Parse(orderTotal.Text)));//edit the order to reflect changes
+            OrderTotalUpdate();//update total
         }
 
         private void name_TextChanged_1(object sender, EventArgs e)
         {
-            guestName = name.Text;
+            guestName = name.Text;//store guest name
         }
 
         private void number_TextChanged_1(object sender, EventArgs e)
@@ -242,10 +236,10 @@ namespace CSC_330_Project_2
 
         private Decimal OrderTotalUpdate()
         {
-            decimal total = 0;
-            String[] foodKeys = MainScreen.kitchen.GetFoodKeys();
-            String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
-            for (int i = 0; i < currentOrderList.Items.Count; i++)
+            decimal total = 0;//temporary total amount
+            String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all keys for food items
+            String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();//get all keys for drink items
+            for (int i = 0; i < currentOrderList.Items.Count; i++)//go through list and add to total accordingly
             {
                 if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
                 {
@@ -256,8 +250,8 @@ namespace CSC_330_Project_2
                     total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
                 }
             }
-            orderTotal.Text = total.ToString();
-            return total;
+            orderTotal.Text = total.ToString();//dispaly total
+            return total;//return total
         }
 
         private void UpdateOrdersList()
@@ -270,11 +264,18 @@ namespace CSC_330_Project_2
             foundOrders = MainScreen.kitchen.AllOrderInfo(roomNumber);//get list of all orders for room number
             if (foundOrders.Count == 0)//if customer never made an order to the kitchen, output error and lock controls
             {
+                clearingLists = true;
+                ordersList.ClearSelected();//clear selected
+                ordersList.Items.Clear();//clear orders
+                clearingLists = false;
                 errorLabel.Text = "No orders found for entered information.";
                 name.Enabled = true;//reenable components that were disabled for search
                 number.Enabled = true;
                 ordersList.Enabled = false;
                 button1.Enabled = true;
+                currentOrderList.Enabled = false;
+                foodList.Enabled = false;
+                drinkList.Enabled = false;
             }
             else
             {
@@ -288,6 +289,8 @@ namespace CSC_330_Project_2
                     ordersList.Items.Add(placeHolder);
                     counter++;
                 }
+                ordersList.ClearSelected();//clear selected
+                ordersList.Items.RemoveAt(ordersList.SelectedIndex);//remove selected order
             }
         }
     }

@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.group1 = new System.Windows.Forms.GroupBox();
+            this.foodList = new System.Windows.Forms.ListBox();
             this.group2 = new System.Windows.Forms.GroupBox();
+            this.drinkList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.itemPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.itemName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.foodList = new System.Windows.Forms.ListBox();
-            this.drinkList = new System.Windows.Forms.ListBox();
+            this.backButton = new System.Windows.Forms.Button();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -47,23 +48,41 @@
             this.group1.BackColor = System.Drawing.Color.Maroon;
             this.group1.Controls.Add(this.foodList);
             this.group1.ForeColor = System.Drawing.SystemColors.Control;
-            this.group1.Location = new System.Drawing.Point(13, 13);
+            this.group1.Location = new System.Drawing.Point(50, 13);
             this.group1.Name = "group1";
             this.group1.Size = new System.Drawing.Size(200, 306);
             this.group1.TabIndex = 0;
             this.group1.TabStop = false;
             this.group1.Text = "Food";
             // 
+            // foodList
+            // 
+            this.foodList.FormattingEnabled = true;
+            this.foodList.Location = new System.Drawing.Point(6, 19);
+            this.foodList.Name = "foodList";
+            this.foodList.Size = new System.Drawing.Size(188, 277);
+            this.foodList.TabIndex = 1;
+            this.foodList.SelectedIndexChanged += new System.EventHandler(this.foodList_SelectedIndexChanged);
+            // 
             // group2
             // 
             this.group2.BackColor = System.Drawing.Color.RosyBrown;
             this.group2.Controls.Add(this.drinkList);
-            this.group2.Location = new System.Drawing.Point(219, 13);
+            this.group2.Location = new System.Drawing.Point(256, 13);
             this.group2.Name = "group2";
             this.group2.Size = new System.Drawing.Size(200, 306);
             this.group2.TabIndex = 1;
             this.group2.TabStop = false;
             this.group2.Text = "Drink";
+            // 
+            // drinkList
+            // 
+            this.drinkList.FormattingEnabled = true;
+            this.drinkList.Location = new System.Drawing.Point(6, 19);
+            this.drinkList.Name = "drinkList";
+            this.drinkList.Size = new System.Drawing.Size(188, 277);
+            this.drinkList.TabIndex = 2;
+            this.drinkList.SelectedIndexChanged += new System.EventHandler(this.drinkList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -73,7 +92,7 @@
             this.groupBox1.Controls.Add(this.itemName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(426, 117);
+            this.groupBox1.Location = new System.Drawing.Point(463, 117);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(266, 96);
             this.groupBox1.TabIndex = 2;
@@ -120,29 +139,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Name:";
             // 
-            // foodList
+            // backButton
             // 
-            this.foodList.FormattingEnabled = true;
-            this.foodList.Location = new System.Drawing.Point(6, 19);
-            this.foodList.Name = "foodList";
-            this.foodList.Size = new System.Drawing.Size(188, 277);
-            this.foodList.TabIndex = 1;
-            this.foodList.SelectedIndexChanged += new System.EventHandler(this.foodList_SelectedIndexChanged);
-            // 
-            // drinkList
-            // 
-            this.drinkList.FormattingEnabled = true;
-            this.drinkList.Location = new System.Drawing.Point(6, 19);
-            this.drinkList.Name = "drinkList";
-            this.drinkList.Size = new System.Drawing.Size(188, 277);
-            this.drinkList.TabIndex = 2;
-            this.drinkList.SelectedIndexChanged += new System.EventHandler(this.drinkList_SelectedIndexChanged);
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(32, 23);
+            this.backButton.TabIndex = 7;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
             // 
             // KitchenMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 331);
+            this.ClientSize = new System.Drawing.Size(750, 331);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
@@ -168,5 +179,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox foodList;
         private System.Windows.Forms.ListBox drinkList;
+        private System.Windows.Forms.Button backButton;
     }
 }

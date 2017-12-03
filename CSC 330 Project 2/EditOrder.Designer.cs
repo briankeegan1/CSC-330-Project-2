@@ -173,7 +173,6 @@
             this.deleteOrder.TabIndex = 9;
             this.deleteOrder.Text = "Delete from Order";
             this.deleteOrder.UseVisualStyleBackColor = true;
-            this.deleteOrder.Click += new System.EventHandler(this.deleteOrder_Click);
             // 
             // addOrder
             // 
