@@ -365,6 +365,7 @@
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
             this.Name = "CreateOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateOrder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateOrder_FormClosing);
             this.groupBox1.ResumeLayout(false);

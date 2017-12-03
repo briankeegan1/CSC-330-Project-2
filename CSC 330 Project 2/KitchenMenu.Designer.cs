@@ -159,6 +159,7 @@
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
             this.Name = "KitchenMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KitchenMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KitchenMenu_FormClosing);
             this.group1.ResumeLayout(false);

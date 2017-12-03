@@ -254,6 +254,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Name = "FinalizeBill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FinalizeBill";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinalizeBill_FormClosed);
             this.groupBox1.ResumeLayout(false);

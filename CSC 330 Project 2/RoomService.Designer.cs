@@ -90,6 +90,7 @@
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.createButton);
             this.Name = "RoomService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Room Service";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RoomService_FormClosing);
             this.Load += new System.EventHandler(this.RoomService_Load);

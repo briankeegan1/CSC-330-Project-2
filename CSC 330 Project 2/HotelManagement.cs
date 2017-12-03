@@ -361,7 +361,7 @@ namespace CSC_330_Project_2
             return foundOrders;
         }
         //return number of orders
-        public int NumberofOrder()
+        public int NumberOfOrder()
         {
             return customerOrders.Count;
         }
@@ -373,7 +373,7 @@ namespace CSC_330_Project_2
             if (File.Exists(path))
             {
                 String info = string.Empty;
-                for(int i = 0; i < NumberofOrder(); i++)
+                for(int i = 0; i < NumberOfOrder(); i++)
                 {
                     String[] str = customerOrders[i].FoodItems;
                     info = info + customerOrders[i].RoomNumber + '\t';
@@ -388,7 +388,7 @@ namespace CSC_330_Project_2
                             info = info + str[j] + '\t';
                         }
                     }
-                    if(i != NumberofOrder() - 1)
+                    if(i != NumberOfOrder() - 1)
                     {
                         info = info + customerOrders[i].OrderTotal + "\r\n";
                     }
@@ -405,7 +405,7 @@ namespace CSC_330_Project_2
     public class Room//contain all info for rooms
     {
         private int numBeds, roomNumber;
-        private decimal nightRate;
+        private decimal nightlyRate;
         private bool availability;
         public Room(int roomNumber, bool availability, decimal nightRate, int numBeds)
         {
@@ -452,11 +452,11 @@ namespace CSC_330_Project_2
         {
             get
             {
-                return nightRate;
+                return nightlyRate;
             }
             set
             {
-                nightRate = value;
+                nightlyRate = value;
             }
         }
     }

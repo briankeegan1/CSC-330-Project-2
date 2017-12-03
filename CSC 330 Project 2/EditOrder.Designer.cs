@@ -407,6 +407,7 @@
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
             this.Name = "EditOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditOrder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditOrder_FormClosing);
             this.groupBox4.ResumeLayout(false);

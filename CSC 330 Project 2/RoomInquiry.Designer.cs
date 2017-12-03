@@ -157,6 +157,7 @@
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox1);
             this.Name = "RoomInquiry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RoomInquiry";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RoomInquiry_FormClosing);
             this.groupBox1.ResumeLayout(false);
