@@ -311,35 +311,52 @@ namespace CSC_330_Project_2
         }
         public void CreateOrder(Order customerOrder)
         {
-            
+            customerOrders.Add(customerOrder);//add order to list
+            MainScreen.frontDesk.ReservationInfo(customerOrder.RoomNumber).TotalBill = MainScreen.frontDesk.ReservationInfo(customerOrder.RoomNumber).TotalBill + customerOrder.OrderTotal;//update guest account
         }
-        public void EditOrder(ref Order customerOrder)
+        public void EditOrder(Order originalOrder, Order editedOrder)
         {
-
+            int orig = customerOrders.IndexOf(originalOrder);//get idex of original order
+            customerOrders[orig].FoodItems = editedOrder.FoodItems;//update information of order
+            customerOrders[orig].OrderTotal = editedOrder.OrderTotal;
         }
-        public void UpdateBill()
+        public void DeleteOrder(Order order)
         {
-
+            int orig = customerOrders.IndexOf(order);//get idex of original order
+            customerOrders.RemoveAt(orig);//remove order
         }
         //return dollar value of passed food item name
-        public decimal foodAt(String key)
+        public decimal FoodAt(String key)
         {
             return foodItems[key];
         }
         //return dollar value of passed drink item name
-        public decimal drinkAt(String key)
+        public decimal DrinkAt(String key)
         {
             return drinksItems[key];
         }
         //return array of keys to be used for iterating through Dictionary
-        public String[] getFoodKeys()
+        public String[] GetFoodKeys()
         {
             return foodItems.Keys.ToArray<String>();
         }
         //return array of keys to be used for iterating through Dictionary
-        public String[] getDrinkKeys()
+        public String[] GetDrinkKeys()
         {
             return drinksItems.Keys.ToArray<String>();
+        }
+        //returns list of all orders for passed room number
+        public List<Order> AllOrderInfo(int roomNumber)
+        {
+            List<Order> foundOrders = new List<Order>();
+            for(int i = 0; i < customerOrders.Count; i++)
+            {
+                if(customerOrders[i].RoomNumber == roomNumber)
+                {
+                    foundOrders.Add(customerOrders[i]);
+                }
+            }
+            return foundOrders;
         }
     }
 

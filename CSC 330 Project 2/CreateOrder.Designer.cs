@@ -50,12 +50,16 @@
             this.name = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.orderTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -299,11 +303,46 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 19;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.Maroon;
+            this.groupBox5.Controls.Add(this.orderTotal);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox5.Location = new System.Drawing.Point(22, 512);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(307, 51);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Total";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 15);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Order Total: $";
+            // 
+            // orderTotal
+            // 
+            this.orderTotal.AutoSize = true;
+            this.orderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderTotal.Location = new System.Drawing.Point(125, 15);
+            this.orderTotal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.orderTotal.Name = "orderTotal";
+            this.orderTotal.Size = new System.Drawing.Size(0, 20);
+            this.orderTotal.TabIndex = 4;
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 575);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
@@ -324,6 +363,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +394,8 @@
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label orderTotal;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -23,18 +23,18 @@ namespace CSC_330_Project_2
             InitializeComponent();
             previous = form;
             //fill list with content
-            String[] content = MainScreen.kitchen.getFoodKeys();//get all keys for list of foods
+            String[] content = MainScreen.kitchen.GetFoodKeys();//get all keys for list of foods
             foreach (String key in content)//add all keys to the menu
             {
                 foodList.Items.Add(key);
             }
             content = null;//get all keys for list of drinks
-            content = MainScreen.kitchen.getDrinkKeys();
+            content = MainScreen.kitchen.GetDrinkKeys();
             foreach (String key in content)//add all keys to the menu
             {
                 drinkList.Items.Add(key);
             }
-            addOrder.Enabled = false;
+            addOrder.Enabled = false;//disable controls to prevent orders with no customer information
             deleteOrder.Enabled = false;
             foodList.Enabled = false;
             drinkList.Enabled = false;
@@ -44,6 +44,7 @@ namespace CSC_330_Project_2
         private void addOrder_Click(object sender, EventArgs e)
         {
             currentOrderList.Items.Add(item);
+            orderTotalUpdate();
         }
 
         private void deleteOrder_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace CSC_330_Project_2
             clearingLists = true;
             currentOrderList.Items.RemoveAt(currentOrderList.SelectedIndex);
             clearingLists = false;
+            orderTotalUpdate();
         }
 
         private void foodList_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace CSC_330_Project_2
                 addOrder.Enabled = true;//enable add to order button if disabled
                 deleteOrder.Enabled = false;//disable delete from order button if enabled
                 item = foodList.SelectedItem.ToString();//store selected item
-                itemCost = MainScreen.kitchen.foodAt(item);//get dollar amount of selected item
+                itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
                 itemName.Text = item;//output name of item to label
                 itemPrice.Text = itemCost.ToString();//output value of item to label
                 clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
@@ -77,7 +79,7 @@ namespace CSC_330_Project_2
                 addOrder.Enabled = true;//enable add to order button if disabled
                 deleteOrder.Enabled = false;//disable delete from order button if enabled
                 item = drinkList.SelectedItem.ToString();//store selected item
-                itemCost = MainScreen.kitchen.drinkAt(item);//get dollar amount of selected item
+                itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
                 itemName.Text = item;//output name of item to label
                 itemPrice.Text = itemCost.ToString();//output value of item to label
                 clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
@@ -93,13 +95,13 @@ namespace CSC_330_Project_2
             {
                 addOrder.Enabled = false;//enable add to order button if disabled
                 deleteOrder.Enabled = true;//disable delete from order button if enabled
-                String[] foodKeys = MainScreen.kitchen.getFoodKeys();//get all the keys of drinks and foods from kitchen object
-                String[] drinkKeys = MainScreen.kitchen.getDrinkKeys();
+                String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all the keys of drinks and foods from kitchen object
+                String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
 
                 if (foodKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))//if item is a food item
                 {
                     item = currentOrderList.SelectedItem.ToString();//store selected item
-                    itemCost = MainScreen.kitchen.foodAt(item);//get dollar amount of selected item
+                    itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
                     itemName.Text = item;//output name of item to label
                     itemPrice.Text = itemCost.ToString();//output value of item to label
                     clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
@@ -110,7 +112,7 @@ namespace CSC_330_Project_2
                 else if (drinkKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))
                 {
                     item = currentOrderList.SelectedItem.ToString();//store selected item
-                    itemCost = MainScreen.kitchen.drinkAt(item);//get dollar amount of selected item
+                    itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
                     itemName.Text = item;//output name of item to label
                     itemPrice.Text = itemCost.ToString();//output value of item to label
                     clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
@@ -140,7 +142,21 @@ namespace CSC_330_Project_2
                 {
                     orderItems[i] = currentOrderList.Items[i].ToString();
                 }
-                
+                decimal total = 0;
+                String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all the keys of drinks and foods from kitchen object
+                String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
+                for (int i = 0; i < currentOrderList.Items.Count; i++)
+                {
+                    if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
+                    {
+                        total = total + MainScreen.kitchen.FoodAt(currentOrderList.Items[i].ToString());
+                    }
+                    else if (drinkKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a drink item
+                    {
+                        total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
+                    }
+                }
+                MainScreen.kitchen.CreateOrder(new Order(Int32.Parse(number.Text), orderItems, total));
             }
         }
 
@@ -178,7 +194,7 @@ namespace CSC_330_Project_2
                 }
                 else if ((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && (MainScreen.frontDesk.ReservationAt(i).CheckedIn))//if guest is checked in
                 {
-                    name.Enabled = false;
+                    name.Enabled = false;//enable rest of controls when correct information is inserted
                     number.Enabled = false;
                     button1.Enabled = false;
                     addOrder.Enabled = true;
@@ -186,8 +202,33 @@ namespace CSC_330_Project_2
                     foodList.Enabled = true;
                     drinkList.Enabled = true;
                     sendKitchen.Enabled = true;
+                    errorLabel.Text = "";
+                }
+                else//if customer is never found, message will be displayed
+                {
+                    errorLabel.Text = "Entered reservation\ndoes not exist.";
                 }
             }
+        }
+
+        private Decimal orderTotalUpdate()
+        {
+            decimal total = 0;
+            String[] foodKeys = MainScreen.kitchen.GetFoodKeys();
+            String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
+            for(int i = 0; i < currentOrderList.Items.Count; i++)
+            {
+                if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
+                {
+                    total = total + MainScreen.kitchen.FoodAt(currentOrderList.Items[i].ToString());
+                }
+                else if (drinkKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a drink item
+                {
+                    total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
+                }
+            }
+            orderTotal.Text = total.ToString();
+            return total;
         }
     }
 }
