@@ -1,0 +1,4 @@
+Toast	1.00
+Omlette	5.00
+Cereal & Milk	2.00
+Oatmeal	4.00

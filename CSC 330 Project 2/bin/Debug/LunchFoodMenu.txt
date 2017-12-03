@@ -1,0 +1,5 @@
+Turkey Sandwich	5.00
+Ham Sandwich	5.00
+Hamburger	7.00
+Cheeseburger	7.50
+Soup of the Day	3.00
