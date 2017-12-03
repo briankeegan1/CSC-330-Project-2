@@ -55,5 +55,12 @@ namespace CSC_330_Project_2
             this.Dispose();
             Application.Exit();
         }
+
+        private void roomInquiry_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form next = new RoomInquiry(this);
+            next.Show();
+        }
     }
 }

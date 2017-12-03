@@ -106,10 +106,12 @@ namespace CSC_330_Project_2
         }
         public void DeleteReservation(String guestName)
         {
+            
             for(int i = 0; i < NumberOfReservations(); i++)
             {
                 if(guestName == hotelReservations[i].CustomerName)
                 {
+                    hotelRooms[hotelReservations[i].RoomNumber - 1].Availability = true;
                     hotelReservations.RemoveAt(i);
                 }
             }

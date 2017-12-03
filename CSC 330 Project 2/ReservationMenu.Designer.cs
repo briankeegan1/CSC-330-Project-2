@@ -32,6 +32,7 @@
             this.createReservation = new System.Windows.Forms.Button();
             this.editReservation = new System.Windows.Forms.Button();
             this.finalize = new System.Windows.Forms.Button();
+            this.roomInquiry = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backButton
@@ -47,7 +48,7 @@
             // createReservation
             // 
             this.createReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createReservation.Location = new System.Drawing.Point(89, 51);
+            this.createReservation.Location = new System.Drawing.Point(89, 76);
             this.createReservation.Name = "createReservation";
             this.createReservation.Size = new System.Drawing.Size(190, 43);
             this.createReservation.TabIndex = 1;
@@ -58,7 +59,7 @@
             // editReservation
             // 
             this.editReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editReservation.Location = new System.Drawing.Point(72, 103);
+            this.editReservation.Location = new System.Drawing.Point(72, 128);
             this.editReservation.Name = "editReservation";
             this.editReservation.Size = new System.Drawing.Size(225, 43);
             this.editReservation.TabIndex = 2;
@@ -69,7 +70,7 @@
             // finalize
             // 
             this.finalize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalize.Location = new System.Drawing.Point(89, 152);
+            this.finalize.Location = new System.Drawing.Point(89, 177);
             this.finalize.Name = "finalize";
             this.finalize.Size = new System.Drawing.Size(190, 43);
             this.finalize.TabIndex = 3;
@@ -77,11 +78,23 @@
             this.finalize.UseVisualStyleBackColor = true;
             this.finalize.Click += new System.EventHandler(this.finalize_Click);
             // 
+            // roomInquiry
+            // 
+            this.roomInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomInquiry.Location = new System.Drawing.Point(89, 27);
+            this.roomInquiry.Name = "roomInquiry";
+            this.roomInquiry.Size = new System.Drawing.Size(190, 43);
+            this.roomInquiry.TabIndex = 4;
+            this.roomInquiry.Text = "Room Inquiry";
+            this.roomInquiry.UseVisualStyleBackColor = true;
+            this.roomInquiry.Click += new System.EventHandler(this.roomInquiry_Click);
+            // 
             // ReservationMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 247);
+            this.Controls.Add(this.roomInquiry);
             this.Controls.Add(this.finalize);
             this.Controls.Add(this.editReservation);
             this.Controls.Add(this.createReservation);
@@ -100,5 +113,6 @@
         private System.Windows.Forms.Button createReservation;
         private System.Windows.Forms.Button editReservation;
         private System.Windows.Forms.Button finalize;
+        private System.Windows.Forms.Button roomInquiry;
     }
 }

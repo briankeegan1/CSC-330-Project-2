@@ -140,6 +140,9 @@
     <EmbeddedResource Include="ReservationMenu.resx">
       <DependentUpon>ReservationMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RoomInquiry.resx">
+      <DependentUpon>RoomInquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomService.resx">
       <DependentUpon>RoomService.cs</DependentUpon>
     </EmbeddedResource>
