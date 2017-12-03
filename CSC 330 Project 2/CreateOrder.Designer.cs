@@ -53,6 +53,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.orderTotal = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group1.SuspendLayout();
@@ -239,7 +240,7 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.number);
             this.groupBox4.Controls.Add(this.name);
-            this.groupBox4.Location = new System.Drawing.Point(22, 13);
+            this.groupBox4.Location = new System.Drawing.Point(46, 13);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(240, 79);
             this.groupBox4.TabIndex = 9;
@@ -287,7 +288,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(268, 25);
+            this.button1.Location = new System.Drawing.Point(292, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 61);
             this.button1.TabIndex = 18;
@@ -298,7 +299,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(399, 13);
+            this.errorLabel.Location = new System.Drawing.Point(423, 13);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 19;
@@ -337,11 +338,23 @@
             this.orderTotal.Size = new System.Drawing.Size(0, 20);
             this.orderTotal.TabIndex = 4;
             // 
+            // backButton
+            // 
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(8, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(32, 23);
+            this.backButton.TabIndex = 20;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 575);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.button1);
@@ -397,5 +410,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label orderTotal;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button backButton;
     }
 }

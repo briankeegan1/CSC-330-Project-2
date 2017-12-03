@@ -31,6 +31,8 @@
             this.errorLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.number = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -51,11 +53,10 @@
             this.foodList = new System.Windows.Forms.ListBox();
             this.ordersList = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.number = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.orderTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +70,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(389, 12);
+            this.errorLabel.Location = new System.Drawing.Point(421, 12);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 27;
@@ -77,7 +78,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(258, 24);
+            this.button1.Location = new System.Drawing.Point(290, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 61);
             this.button1.TabIndex = 26;
@@ -92,12 +93,28 @@
             this.groupBox4.Controls.Add(this.name);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(44, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(240, 79);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Guest Information";
+            // 
+            // number
+            // 
+            this.number.Location = new System.Drawing.Point(117, 46);
+            this.number.Name = "number";
+            this.number.Size = new System.Drawing.Size(100, 20);
+            this.number.TabIndex = 9;
+            this.number.TextChanged += new System.EventHandler(this.number_TextChanged_1);
+            // 
+            // name
+            // 
+            this.name.Location = new System.Drawing.Point(117, 16);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(100, 20);
+            this.name.TabIndex = 8;
+            this.name.TextChanged += new System.EventHandler(this.name_TextChanged_1);
             // 
             // label2
             // 
@@ -328,22 +345,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Orders List";
             // 
-            // name
-            // 
-            this.name.Location = new System.Drawing.Point(117, 16);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(100, 20);
-            this.name.TabIndex = 8;
-            this.name.TextChanged += new System.EventHandler(this.name_TextChanged_1);
-            // 
-            // number
-            // 
-            this.number.Location = new System.Drawing.Point(117, 46);
-            this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(100, 20);
-            this.number.TabIndex = 9;
-            this.number.TextChanged += new System.EventHandler(this.number_TextChanged_1);
-            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Maroon;
@@ -378,11 +379,23 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Order Total: $";
             // 
+            // backButton
+            // 
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(6, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(32, 23);
+            this.backButton.TabIndex = 30;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 581);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
@@ -443,5 +456,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label orderTotal;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button backButton;
     }
 }

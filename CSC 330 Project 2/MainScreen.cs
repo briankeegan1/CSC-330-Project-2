@@ -38,6 +38,8 @@ namespace CSC_330_Project_2
 
         private void MainScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
         }

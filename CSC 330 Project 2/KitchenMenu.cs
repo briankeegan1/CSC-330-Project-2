@@ -14,6 +14,7 @@ namespace CSC_330_Project_2
     {
         private String item;
         private decimal itemCost;
+        bool clearingLists;
         private Form previous;
         public KitchenMenu(Form form)
         {
@@ -31,30 +32,51 @@ namespace CSC_330_Project_2
             {
                 drinkList.Items.Add(key);
             }
+            clearingLists = false;
         }
 
         private void KitchenMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
         }
 
         private void foodList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            item = foodList.SelectedItem.ToString();
-            itemCost = MainScreen.kitchen.FoodAt(item);
-            itemName.Text = item;
-            itemPrice.Text = itemCost.ToString();
-            drinkList.SelectedItem = null;
+            if (!clearingLists)//if lists are not being cleared, begin operations
+            {
+                item = foodList.SelectedItem.ToString();//store selected item
+                itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
+                itemName.Text = item;//output name of item to label
+                itemPrice.Text = itemCost.ToString();//output value of item to label
+                clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                drinkList.ClearSelected();//clear selected items from other lists
+                clearingLists = false;//set bool to indicate that we are done clearing the other lists
+            }
         }
 
         private void drinkList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            item = drinkList.SelectedItem.ToString();
-            itemCost = MainScreen.kitchen.DrinkAt(item);
-            itemName.Text = item;
-            itemPrice.Text = itemCost.ToString();
-            foodList.SelectedItem = null;
+            if (!clearingLists)//if lists are not being cleared, begin operations
+            {
+                item = drinkList.SelectedItem.ToString();//store selected item
+                itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
+                itemName.Text = item;//output name of item to label
+                itemPrice.Text = itemCost.ToString();//output value of item to label
+                clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                foodList.ClearSelected();//clear selected items from other lists
+                clearingLists = false;//set bool to indicate that we are done clearing the other lists
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
+            this.Dispose();
+            previous.Show();
         }
     }
 }

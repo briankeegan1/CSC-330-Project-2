@@ -100,6 +100,8 @@ namespace CSC_330_Project_2
 
         private void EditOrder_FormClosing(object sender, FormClosingEventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
         }
@@ -276,6 +278,8 @@ namespace CSC_330_Project_2
                 currentOrderList.Enabled = false;
                 foodList.Enabled = false;
                 drinkList.Enabled = false;
+                addOrder.Enabled = false;
+
             }
             else
             {
@@ -292,6 +296,14 @@ namespace CSC_330_Project_2
                 ordersList.ClearSelected();//clear selected
                 ordersList.Items.RemoveAt(ordersList.SelectedIndex);//remove selected order
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
+            this.Dispose();
+            previous.Show();
         }
     }
 }

@@ -35,6 +35,7 @@ namespace CSC_330_Project_2
                     roomList.Items.Add(MainScreen.frontDesk.RoomAt(j).RoomNumber);
             }
         }
+
         private void name_TextChanged(object sender, EventArgs e)
         {
             guestName = name.Text;//store guest name
@@ -96,7 +97,6 @@ namespace CSC_330_Project_2
                 {
                     errorLabel.Text = "Invalid Information\nentered.";
                     button1.BackColor = Color.PaleVioletRed;
-                    break;
                 }
             }
         }
@@ -141,12 +141,15 @@ namespace CSC_330_Project_2
         private void backButton_Click(object sender, EventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             previous.Show();
         }
 
         private void EditReservation_FormClosed(object sender, FormClosedEventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
         }

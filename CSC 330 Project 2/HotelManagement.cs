@@ -358,6 +358,46 @@ namespace CSC_330_Project_2
             }
             return foundOrders;
         }
+        //return number of orders
+        public int NumberofOrder()
+        {
+            return customerOrders.Count;
+        }
+        //update files
+        public void UpdateFiles()
+        {
+            String path = "CustomerOrders.txt";//path of hotelRooms file
+            String content = string.Empty;//create string to hold all content
+            if (File.Exists(path))
+            {
+                String info = string.Empty;
+                for(int i = 0; i < NumberofOrder(); i++)
+                {
+                    String[] str = customerOrders[i].FoodItems;
+                    info = info + customerOrders[i].RoomNumber + '\t';
+                    for(int j = 0; j < str.Length; j++)
+                    {
+                        if(j != str.Length - 1)
+                        {
+                            info = info + str[j] + ',';
+                        }
+                        else
+                        {
+                            info = info + str[j] + '\t';
+                        }
+                    }
+                    if(i != NumberofOrder() - 1)
+                    {
+                        info = info + customerOrders[i].OrderTotal + "\r\n";
+                    }
+                    else
+                    {
+                        info = info + customerOrders[i].OrderTotal;
+                    }
+                }
+                File.WriteAllText(path, info);//write to file
+            }
+        }
     }
 
     public class Room//contain all info for rooms

@@ -21,8 +21,10 @@ namespace CSC_330_Project_2
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            previous.Show();//show previoud menu
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();//dispose of this form
+            previous.Show();//show previoud menu
         }
 
         private void createReservation_Click(object sender, EventArgs e)
@@ -48,6 +50,8 @@ namespace CSC_330_Project_2
 
         private void ReservationMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
         }
