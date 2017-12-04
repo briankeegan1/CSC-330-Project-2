@@ -37,68 +37,93 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.backButton.Location = new System.Drawing.Point(59, 208);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(32, 23);
+            this.backButton.Size = new System.Drawing.Size(143, 43);
             this.backButton.TabIndex = 0;
-            this.backButton.Text = "<--";
-            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // createReservation
             // 
+            this.createReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.createReservation.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.createReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createReservation.Location = new System.Drawing.Point(89, 76);
+            this.createReservation.ForeColor = System.Drawing.SystemColors.Control;
+            this.createReservation.Location = new System.Drawing.Point(16, 61);
             this.createReservation.Name = "createReservation";
-            this.createReservation.Size = new System.Drawing.Size(190, 43);
+            this.createReservation.Size = new System.Drawing.Size(225, 43);
             this.createReservation.TabIndex = 1;
             this.createReservation.Text = "Create Reservation";
-            this.createReservation.UseVisualStyleBackColor = true;
+            this.createReservation.UseVisualStyleBackColor = false;
             this.createReservation.Click += new System.EventHandler(this.createReservation_Click);
             // 
             // editReservation
             // 
+            this.editReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.editReservation.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.editReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editReservation.Location = new System.Drawing.Point(72, 128);
+            this.editReservation.ForeColor = System.Drawing.SystemColors.Control;
+            this.editReservation.Location = new System.Drawing.Point(16, 110);
             this.editReservation.Name = "editReservation";
             this.editReservation.Size = new System.Drawing.Size(225, 43);
             this.editReservation.TabIndex = 2;
             this.editReservation.Text = "Edit/Delete Reservation";
-            this.editReservation.UseVisualStyleBackColor = true;
+            this.editReservation.UseVisualStyleBackColor = false;
             this.editReservation.Click += new System.EventHandler(this.editReservation_Click);
             // 
             // finalize
             // 
+            this.finalize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.finalize.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.finalize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finalize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalize.Location = new System.Drawing.Point(89, 177);
+            this.finalize.ForeColor = System.Drawing.SystemColors.Control;
+            this.finalize.Location = new System.Drawing.Point(16, 159);
             this.finalize.Name = "finalize";
-            this.finalize.Size = new System.Drawing.Size(190, 43);
+            this.finalize.Size = new System.Drawing.Size(225, 43);
             this.finalize.TabIndex = 3;
             this.finalize.Text = "Finalize Bill";
-            this.finalize.UseVisualStyleBackColor = true;
+            this.finalize.UseVisualStyleBackColor = false;
             this.finalize.Click += new System.EventHandler(this.finalize_Click);
             // 
             // roomInquiry
             // 
+            this.roomInquiry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.roomInquiry.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.roomInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roomInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomInquiry.Location = new System.Drawing.Point(89, 27);
+            this.roomInquiry.ForeColor = System.Drawing.SystemColors.Control;
+            this.roomInquiry.Location = new System.Drawing.Point(16, 12);
             this.roomInquiry.Name = "roomInquiry";
-            this.roomInquiry.Size = new System.Drawing.Size(190, 43);
+            this.roomInquiry.Size = new System.Drawing.Size(225, 43);
             this.roomInquiry.TabIndex = 4;
             this.roomInquiry.Text = "Room Inquiry";
-            this.roomInquiry.UseVisualStyleBackColor = true;
+            this.roomInquiry.UseVisualStyleBackColor = false;
             this.roomInquiry.Click += new System.EventHandler(this.roomInquiry_Click);
             // 
             // ReservationMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 247);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(256, 265);
             this.Controls.Add(this.roomInquiry);
             this.Controls.Add(this.finalize);
             this.Controls.Add(this.editReservation);
             this.Controls.Add(this.createReservation);
             this.Controls.Add(this.backButton);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ReservationMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservationMenu";

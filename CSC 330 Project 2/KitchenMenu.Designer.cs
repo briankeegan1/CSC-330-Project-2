@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.itemName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.backButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -45,10 +45,11 @@
             // 
             // group1
             // 
-            this.group1.BackColor = System.Drawing.Color.Maroon;
+            this.group1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.group1.Controls.Add(this.foodList);
+            this.group1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group1.ForeColor = System.Drawing.SystemColors.Control;
-            this.group1.Location = new System.Drawing.Point(50, 13);
+            this.group1.Location = new System.Drawing.Point(12, 61);
             this.group1.Name = "group1";
             this.group1.Size = new System.Drawing.Size(200, 306);
             this.group1.TabIndex = 0;
@@ -57,18 +58,23 @@
             // 
             // foodList
             // 
+            this.foodList.BackColor = System.Drawing.Color.Silver;
+            this.foodList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foodList.FormattingEnabled = true;
+            this.foodList.ItemHeight = 24;
             this.foodList.Location = new System.Drawing.Point(6, 19);
             this.foodList.Name = "foodList";
-            this.foodList.Size = new System.Drawing.Size(188, 277);
+            this.foodList.Size = new System.Drawing.Size(188, 268);
             this.foodList.TabIndex = 1;
             this.foodList.SelectedIndexChanged += new System.EventHandler(this.foodList_SelectedIndexChanged);
             // 
             // group2
             // 
-            this.group2.BackColor = System.Drawing.Color.RosyBrown;
+            this.group2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.group2.Controls.Add(this.drinkList);
-            this.group2.Location = new System.Drawing.Point(256, 13);
+            this.group2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.group2.ForeColor = System.Drawing.SystemColors.Control;
+            this.group2.Location = new System.Drawing.Point(218, 61);
             this.group2.Name = "group2";
             this.group2.Size = new System.Drawing.Size(200, 306);
             this.group2.TabIndex = 1;
@@ -77,24 +83,28 @@
             // 
             // drinkList
             // 
+            this.drinkList.BackColor = System.Drawing.Color.Silver;
+            this.drinkList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drinkList.FormattingEnabled = true;
+            this.drinkList.ItemHeight = 24;
             this.drinkList.Location = new System.Drawing.Point(6, 19);
             this.drinkList.Name = "drinkList";
-            this.drinkList.Size = new System.Drawing.Size(188, 277);
+            this.drinkList.Size = new System.Drawing.Size(188, 268);
             this.drinkList.TabIndex = 2;
             this.drinkList.SelectedIndexChanged += new System.EventHandler(this.drinkList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Maroon;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Controls.Add(this.itemPrice);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.itemName);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(463, 117);
+            this.groupBox1.Location = new System.Drawing.Point(83, 373);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 96);
+            this.groupBox1.Size = new System.Drawing.Size(246, 96);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item Info";
@@ -139,25 +149,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Name:";
             // 
-            // backButton
+            // button1
             // 
-            this.backButton.Location = new System.Drawing.Point(12, 12);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(32, 23);
-            this.backButton.TabIndex = 7;
-            this.backButton.Text = "<--";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 43);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // KitchenMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 331);
-            this.Controls.Add(this.backButton);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(431, 482);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
+            this.DoubleBuffered = true;
             this.Name = "KitchenMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KitchenMenu";
@@ -181,6 +199,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox foodList;
         private System.Windows.Forms.ListBox drinkList;
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button button1;
     }
 }

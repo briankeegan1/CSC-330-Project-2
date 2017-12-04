@@ -43,17 +43,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.createReservationButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Maroon;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Controls.Add(this.nightlyRateLabel);
             this.groupBox1.Controls.Add(this.availabilityLabel);
             this.groupBox1.Controls.Add(this.numBedLabel);
@@ -61,10 +59,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.roomList);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(12, 203);
+            this.groupBox1.Location = new System.Drawing.Point(12, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(586, 173);
+            this.groupBox1.Size = new System.Drawing.Size(545, 173);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Info";
@@ -73,9 +72,10 @@
             // 
             this.nightlyRateLabel.AutoSize = true;
             this.nightlyRateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nightlyRateLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nightlyRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nightlyRateLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.nightlyRateLabel.Location = new System.Drawing.Point(321, 86);
+            this.nightlyRateLabel.Location = new System.Drawing.Point(321, 103);
             this.nightlyRateLabel.Name = "nightlyRateLabel";
             this.nightlyRateLabel.Size = new System.Drawing.Size(47, 25);
             this.nightlyRateLabel.TabIndex = 6;
@@ -85,9 +85,10 @@
             // 
             this.availabilityLabel.AutoSize = true;
             this.availabilityLabel.BackColor = System.Drawing.Color.Transparent;
+            this.availabilityLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.availabilityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.availabilityLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.availabilityLabel.Location = new System.Drawing.Point(289, 52);
+            this.availabilityLabel.Location = new System.Drawing.Point(289, 61);
             this.availabilityLabel.Name = "availabilityLabel";
             this.availabilityLabel.Size = new System.Drawing.Size(47, 25);
             this.availabilityLabel.TabIndex = 5;
@@ -97,6 +98,7 @@
             // 
             this.numBedLabel.AutoSize = true;
             this.numBedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.numBedLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.numBedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numBedLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.numBedLabel.Location = new System.Drawing.Point(340, 20);
@@ -109,9 +111,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(162, 86);
+            this.label5.Location = new System.Drawing.Point(162, 103);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 25);
             this.label5.TabIndex = 3;
@@ -121,9 +124,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(162, 52);
+            this.label4.Location = new System.Drawing.Point(162, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 25);
             this.label4.TabIndex = 2;
@@ -133,6 +137,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(162, 20);
@@ -143,26 +148,29 @@
             // 
             // roomList
             // 
+            this.roomList.BackColor = System.Drawing.Color.Silver;
+            this.roomList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roomList.FormattingEnabled = true;
+            this.roomList.ItemHeight = 20;
             this.roomList.Location = new System.Drawing.Point(6, 20);
             this.roomList.Name = "roomList";
-            this.roomList.Size = new System.Drawing.Size(120, 147);
-            this.roomList.TabIndex = 0;
+            this.roomList.Size = new System.Drawing.Size(120, 142);
+            this.roomList.TabIndex = 3;
             this.roomList.SelectedIndexChanged += new System.EventHandler(this.roomList_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(115, 18);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.Size = new System.Drawing.Size(212, 26);
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 20);
             this.label1.TabIndex = 3;
@@ -170,12 +178,14 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(165, 54);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(123, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.Size = new System.Drawing.Size(162, 29);
+            this.dateTimePicker1.TabIndex = 1;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
@@ -190,14 +200,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.RosyBrown;
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox2.Controls.Add(this.errorLabel);
             this.groupBox2.Controls.Add(this.createReservationButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Location = new System.Drawing.Point(53, 91);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Location = new System.Drawing.Point(12, 79);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(545, 106);
             this.groupBox2.TabIndex = 6;
@@ -209,63 +221,69 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Location = new System.Drawing.Point(295, 16);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.Size = new System.Drawing.Size(0, 20);
             this.errorLabel.TabIndex = 7;
             // 
             // createReservationButton
             // 
-            this.createReservationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createReservationButton.Location = new System.Drawing.Point(403, 52);
+            this.createReservationButton.BackColor = System.Drawing.Color.Gray;
+            this.createReservationButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.createReservationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createReservationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createReservationButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.createReservationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createReservationButton.Location = new System.Drawing.Point(403, 18);
             this.createReservationButton.Name = "createReservationButton";
-            this.createReservationButton.Size = new System.Drawing.Size(136, 48);
-            this.createReservationButton.TabIndex = 6;
+            this.createReservationButton.Size = new System.Drawing.Size(136, 82);
+            this.createReservationButton.TabIndex = 2;
             this.createReservationButton.Text = "Create Reservation";
-            this.createReservationButton.UseVisualStyleBackColor = true;
+            this.createReservationButton.UseVisualStyleBackColor = false;
             this.createReservationButton.Click += new System.EventHandler(this.createReservationButton_Click);
-            // 
-            // backButton
-            // 
-            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(12, 12);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(32, 23);
-            this.backButton.TabIndex = 18;
-            this.backButton.Text = "<--";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(63, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(529, 73);
-            this.panel1.TabIndex = 32;
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.RosyBrown;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(170, 12);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(521, 61);
+            this.label6.Size = new System.Drawing.Size(387, 61);
             this.label6.TabIndex = 0;
             this.label6.Text = "Directions: To create a reservation, enter a name, select a date, and then select" +
     " you room. If all data is proper, click create reservation to create your reserv" +
     "ation.";
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(12, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(143, 58);
+            this.button4.TabIndex = 36;
+            this.button4.Text = "Back";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // CreateReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 382);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.backButton);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(576, 374);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Monotype Corsiva", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CreateReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateReservation";
@@ -274,7 +292,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -295,9 +312,8 @@
         private System.Windows.Forms.Label availabilityLabel;
         private System.Windows.Forms.Label numBedLabel;
         private System.Windows.Forms.Button createReservationButton;
-        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label errorLabel;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
     }
 }

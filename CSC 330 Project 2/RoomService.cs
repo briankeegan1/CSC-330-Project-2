@@ -48,7 +48,7 @@ namespace CSC_330_Project_2
             Environment.Exit(-1);
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void backButton_Click_1(object sender, EventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();

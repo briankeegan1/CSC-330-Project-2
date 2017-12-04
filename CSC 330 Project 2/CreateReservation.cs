@@ -80,20 +80,20 @@ namespace CSC_330_Project_2
             }
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            MainScreen.frontDesk.UpdateFiles();
-            MainScreen.kitchen.UpdateFiles();
-            this.Dispose();
-            previous.Show();
-        }
-
         private void CreateReservation_FormClosing(object sender, FormClosingEventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
+            this.Dispose();
+            previous.Show();
         }
     }
 }

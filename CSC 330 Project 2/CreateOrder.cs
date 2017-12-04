@@ -242,7 +242,7 @@ namespace CSC_330_Project_2
             return total;
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();

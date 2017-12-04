@@ -42,10 +42,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.BackColor = System.Drawing.Color.Maroon;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Controls.Add(this.nightlyRateLabel);
             this.groupBox1.Controls.Add(this.availabilityLabel);
             this.groupBox1.Controls.Add(this.numBedLabel);
@@ -54,9 +52,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.roomList);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(50, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 173);
+            this.groupBox1.Size = new System.Drawing.Size(511, 173);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room Info";
@@ -135,32 +133,42 @@
             // 
             // roomList
             // 
+            this.roomList.BackColor = System.Drawing.Color.DarkGray;
+            this.roomList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomList.FormattingEnabled = true;
+            this.roomList.ItemHeight = 24;
             this.roomList.Location = new System.Drawing.Point(6, 20);
             this.roomList.Name = "roomList";
-            this.roomList.Size = new System.Drawing.Size(120, 147);
+            this.roomList.Size = new System.Drawing.Size(137, 148);
             this.roomList.TabIndex = 0;
             this.roomList.SelectedIndexChanged += new System.EventHandler(this.roomList_SelectedIndexChanged);
             // 
             // backButton
             // 
-            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.SystemColors.Control;
             this.backButton.Location = new System.Drawing.Point(12, 12);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(32, 23);
+            this.backButton.Size = new System.Drawing.Size(143, 43);
             this.backButton.TabIndex = 3;
-            this.backButton.Text = "<--";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
             // 
             // RoomInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 196);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(535, 246);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "RoomInquiry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RoomInquiry";
