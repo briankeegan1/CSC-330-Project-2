@@ -147,6 +147,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.roomCharge);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Location = new System.Drawing.Point(15, 239);
             this.groupBox2.Name = "groupBox2";
@@ -298,6 +299,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FinalizeBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FinalizeBill";

@@ -356,7 +356,6 @@
             // 
             // sendKitchen
             // 
-            this.sendKitchen.AutoSize = true;
             this.sendKitchen.BackColor = System.Drawing.Color.DarkGray;
             this.sendKitchen.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.sendKitchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -364,14 +363,13 @@
             this.sendKitchen.ForeColor = System.Drawing.SystemColors.Control;
             this.sendKitchen.Location = new System.Drawing.Point(15, 99);
             this.sendKitchen.Name = "sendKitchen";
-            this.sendKitchen.Size = new System.Drawing.Size(210, 36);
+            this.sendKitchen.Size = new System.Drawing.Size(210, 34);
             this.sendKitchen.TabIndex = 8;
             this.sendKitchen.Text = "Send To Kitchen";
             this.sendKitchen.UseVisualStyleBackColor = false;
             // 
             // deleteOrder
             // 
-            this.deleteOrder.AutoSize = true;
             this.deleteOrder.BackColor = System.Drawing.Color.DarkGray;
             this.deleteOrder.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.deleteOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -379,14 +377,13 @@
             this.deleteOrder.ForeColor = System.Drawing.SystemColors.Control;
             this.deleteOrder.Location = new System.Drawing.Point(15, 59);
             this.deleteOrder.Name = "deleteOrder";
-            this.deleteOrder.Size = new System.Drawing.Size(212, 36);
+            this.deleteOrder.Size = new System.Drawing.Size(210, 34);
             this.deleteOrder.TabIndex = 7;
             this.deleteOrder.Text = "Delete Item from Order";
             this.deleteOrder.UseVisualStyleBackColor = false;
             // 
             // addOrder
             // 
-            this.addOrder.AutoSize = true;
             this.addOrder.BackColor = System.Drawing.Color.DarkGray;
             this.addOrder.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.addOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -394,7 +391,7 @@
             this.addOrder.ForeColor = System.Drawing.SystemColors.Control;
             this.addOrder.Location = new System.Drawing.Point(15, 19);
             this.addOrder.Name = "addOrder";
-            this.addOrder.Size = new System.Drawing.Size(210, 36);
+            this.addOrder.Size = new System.Drawing.Size(210, 34);
             this.addOrder.TabIndex = 6;
             this.addOrder.Text = "Add to Order";
             this.addOrder.UseVisualStyleBackColor = false;
@@ -418,6 +415,7 @@
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "CreateOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateOrder";
@@ -432,7 +430,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

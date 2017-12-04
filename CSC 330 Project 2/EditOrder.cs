@@ -313,13 +313,12 @@ namespace CSC_330_Project_2
             }
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             previous.Show();
         }
-
     }
 }

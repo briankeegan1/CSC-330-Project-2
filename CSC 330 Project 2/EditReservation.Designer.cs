@@ -337,6 +337,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "EditReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditReservation";

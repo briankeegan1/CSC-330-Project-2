@@ -109,6 +109,7 @@
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.createButton);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RoomService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Room Service";

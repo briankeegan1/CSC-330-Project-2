@@ -78,14 +78,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(285, 71);
+            this.button1.Location = new System.Drawing.Point(48, 77);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 79);
+            this.button1.Size = new System.Drawing.Size(155, 73);
             this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
@@ -98,11 +98,12 @@
             this.groupBox4.Controls.Add(this.name);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox4.Location = new System.Drawing.Point(12, 71);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 79);
+            this.groupBox4.Size = new System.Drawing.Size(250, 156);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Guest Information";
@@ -154,7 +155,7 @@
             this.groupBox3.Controls.Add(this.addOrder);
             this.groupBox3.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Location = new System.Drawing.Point(12, 298);
+            this.groupBox3.Location = new System.Drawing.Point(12, 375);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(250, 187);
             this.groupBox3.TabIndex = 24;
@@ -226,7 +227,7 @@
             this.groupBox2.Controls.Add(this.currentOrderList);
             this.groupBox2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(765, 156);
+            this.groupBox2.Location = new System.Drawing.Point(765, 71);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 306);
@@ -255,7 +256,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(285, 469);
+            this.groupBox1.Location = new System.Drawing.Point(285, 394);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(217, 96);
             this.groupBox1.TabIndex = 23;
@@ -308,7 +309,7 @@
             this.group2.Controls.Add(this.drinkList);
             this.group2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group2.ForeColor = System.Drawing.SystemColors.Control;
-            this.group2.Location = new System.Drawing.Point(525, 156);
+            this.group2.Location = new System.Drawing.Point(525, 71);
             this.group2.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.group2.Name = "group2";
             this.group2.Size = new System.Drawing.Size(200, 306);
@@ -334,7 +335,7 @@
             this.group1.Controls.Add(this.foodList);
             this.group1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group1.ForeColor = System.Drawing.SystemColors.Control;
-            this.group1.Location = new System.Drawing.Point(285, 156);
+            this.group1.Location = new System.Drawing.Point(285, 71);
             this.group1.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.group1.Name = "group1";
             this.group1.Size = new System.Drawing.Size(200, 306);
@@ -373,7 +374,7 @@
             this.groupBox5.Controls.Add(this.ordersList);
             this.groupBox5.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox5.Location = new System.Drawing.Point(12, 156);
+            this.groupBox5.Location = new System.Drawing.Point(12, 233);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(250, 136);
             this.groupBox5.TabIndex = 28;
@@ -387,9 +388,9 @@
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox6.Location = new System.Drawing.Point(748, 487);
+            this.groupBox6.Location = new System.Drawing.Point(748, 394);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(217, 51);
+            this.groupBox6.Size = new System.Drawing.Size(217, 96);
             this.groupBox6.TabIndex = 29;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Total";
@@ -398,7 +399,7 @@
             // 
             this.orderTotal.AutoSize = true;
             this.orderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderTotal.Location = new System.Drawing.Point(125, 15);
+            this.orderTotal.Location = new System.Drawing.Point(111, 38);
             this.orderTotal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.orderTotal.Name = "orderTotal";
             this.orderTotal.Size = new System.Drawing.Size(0, 20);
@@ -408,7 +409,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 15);
+            this.label5.Location = new System.Drawing.Point(6, 38);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 20);
@@ -421,10 +422,10 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(161, 7);
+            this.label6.Location = new System.Drawing.Point(263, 7);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(821, 58);
+            this.label6.Size = new System.Drawing.Size(719, 58);
             this.label6.TabIndex = 31;
             this.label6.Text = "Directions: To edit an order, enter the name on the reservation, and reservation " +
     "room number. Then select an order from the left-hand list to view contents and e" +
@@ -443,6 +444,7 @@
             this.button4.TabIndex = 35;
             this.button4.Text = "Back";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // EditOrder
             // 
@@ -456,7 +458,6 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -465,6 +466,7 @@
             this.Controls.Add(this.group1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Monotype Corsiva", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "EditOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditOrder";

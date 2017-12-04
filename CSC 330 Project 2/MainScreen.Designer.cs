@@ -72,6 +72,7 @@
             this.Controls.Add(this.roomservice);
             this.Controls.Add(this.reservation);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main Screen";
