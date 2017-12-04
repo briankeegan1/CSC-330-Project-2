@@ -193,7 +193,7 @@
             this.MiscCharge.AutoSize = true;
             this.MiscCharge.BackColor = System.Drawing.Color.Transparent;
             this.MiscCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MiscCharge.Location = new System.Drawing.Point(133, 56);
+            this.MiscCharge.Location = new System.Drawing.Point(142, 56);
             this.MiscCharge.Name = "MiscCharge";
             this.MiscCharge.Size = new System.Drawing.Size(32, 18);
             this.MiscCharge.TabIndex = 3;
@@ -205,16 +205,16 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(17, 56);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 18);
+            this.label7.Size = new System.Drawing.Size(119, 18);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Miscellaneous:";
+            this.label7.Text = "Miscellaneous: $";
             // 
             // roomCharge
             // 
             this.roomCharge.AutoSize = true;
             this.roomCharge.BackColor = System.Drawing.Color.Transparent;
             this.roomCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomCharge.Location = new System.Drawing.Point(133, 20);
+            this.roomCharge.Location = new System.Drawing.Point(145, 20);
             this.roomCharge.Name = "roomCharge";
             this.roomCharge.Size = new System.Drawing.Size(32, 18);
             this.roomCharge.TabIndex = 1;
@@ -226,9 +226,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(17, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 18);
+            this.label4.Size = new System.Drawing.Size(122, 18);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Room Charge: ";
+            this.label4.Text = "Room Charge:  $";
             // 
             // backButton
             // 

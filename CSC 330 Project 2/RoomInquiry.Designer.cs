@@ -64,7 +64,7 @@
             this.nightlyRateLabel.BackColor = System.Drawing.Color.Transparent;
             this.nightlyRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nightlyRateLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.nightlyRateLabel.Location = new System.Drawing.Point(303, 107);
+            this.nightlyRateLabel.Location = new System.Drawing.Point(321, 107);
             this.nightlyRateLabel.Name = "nightlyRateLabel";
             this.nightlyRateLabel.Size = new System.Drawing.Size(47, 25);
             this.nightlyRateLabel.TabIndex = 6;
@@ -102,9 +102,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(162, 107);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 25);
+            this.label5.Size = new System.Drawing.Size(153, 25);
             this.label5.TabIndex = 3;
-            this.label5.Text = "NightlyRate: ";
+            this.label5.Text = "NightlyRate:  $";
             // 
             // label4
             // 
