@@ -61,7 +61,8 @@ namespace CSC_330_Project_2
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            //Application.Exit();
+            Environment.Exit(-1);
         }
 
         private void backButton_Click(object sender, EventArgs e)

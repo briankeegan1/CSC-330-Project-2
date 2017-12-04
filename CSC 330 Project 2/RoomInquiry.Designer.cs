@@ -42,6 +42,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.BackColor = System.Drawing.Color.Maroon;
             this.groupBox1.Controls.Add(this.nightlyRateLabel);
             this.groupBox1.Controls.Add(this.availabilityLabel);
@@ -141,6 +144,8 @@
             // 
             // backButton
             // 
+            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.backButton.Location = new System.Drawing.Point(12, 12);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(32, 23);

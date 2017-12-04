@@ -102,7 +102,7 @@
             this.Name = "ReservationMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservationMenu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReservationMenu_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReservationMenu_FormClosing);
             this.ResumeLayout(false);
 
         }

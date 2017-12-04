@@ -19,11 +19,6 @@ namespace CSC_330_Project_2
             InitializeComponent();
         }
 
-        private void RoomService_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void menuButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -50,7 +45,7 @@ namespace CSC_330_Project_2
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            Environment.Exit(-1);
         }
 
         private void backButton_Click(object sender, EventArgs e)

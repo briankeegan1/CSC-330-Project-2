@@ -37,10 +37,11 @@
             // menuButton
             // 
             this.menuButton.AutoSize = true;
+            this.menuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuButton.Location = new System.Drawing.Point(117, 72);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(86, 34);
+            this.menuButton.Size = new System.Drawing.Size(69, 34);
             this.menuButton.TabIndex = 5;
             this.menuButton.Text = "Menu";
             this.menuButton.UseVisualStyleBackColor = true;
@@ -49,6 +50,7 @@
             // editButton
             // 
             this.editButton.AutoSize = true;
+            this.editButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.Location = new System.Drawing.Point(79, 152);
             this.editButton.Name = "editButton";
@@ -61,6 +63,7 @@
             // createButton
             // 
             this.createButton.AutoSize = true;
+            this.createButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createButton.Location = new System.Drawing.Point(97, 112);
             this.createButton.Name = "createButton";
@@ -93,7 +96,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Room Service";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RoomService_FormClosing);
-            this.Load += new System.EventHandler(this.RoomService_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

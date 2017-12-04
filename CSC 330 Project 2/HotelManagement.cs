@@ -243,6 +243,8 @@ namespace CSC_330_Project_2
                 String[] lines = content.Split(new[] { "\r\n" }, StringSplitOptions.None);//split all content into lines
                 foreach (String ind in lines)
                 {
+                    if (ind == String.Empty)//if there are no orders in queue, break out from loop
+                        break;
                     String[] individual = ind.Split(new[] { "\t" }, StringSplitOptions.None);//split individual lines into seperate words
                     String[] food = individual[1].Split(new[] { "," }, StringSplitOptions.None);//split list of foods into seperate items
                     customerOrders.Add(new Order(Int32.Parse(individual[0]), food, Decimal.Parse(individual[2])));//store order data

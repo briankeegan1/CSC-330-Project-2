@@ -36,12 +36,12 @@ namespace CSC_330_Project_2
             next.Show();//show next form
         }
 
-        private void MainScreen_FormClosed(object sender, FormClosedEventArgs e)
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainScreen.frontDesk.UpdateFiles();
-            MainScreen.kitchen.UpdateFiles();
+            frontDesk.UpdateFiles();
+            kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            Environment.Exit(-1);
         }
     }
 }

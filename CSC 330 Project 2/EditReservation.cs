@@ -78,6 +78,7 @@ namespace CSC_330_Project_2
             {
                 if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
+                    errorLabel.Text = String.Empty;
                     button1.BackColor = Color.White;
                     checkIn.Enabled = true;//enable the datetimePicker
                     checkIn.Value = MainScreen.frontDesk.ReservationAt(i).CheckInDateTime;//get value of reservation
@@ -151,7 +152,7 @@ namespace CSC_330_Project_2
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            Environment.Exit(-1);
         }
     }
 }

@@ -96,12 +96,12 @@ namespace CSC_330_Project_2
             previous.Show();
         }
 
-        private void FinalizeBill_FormClosed(object sender, FormClosedEventArgs e)
+        private void FinalizeBill_FormClosing(object sender, FormClosingEventArgs e)
         {
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            Environment.Exit(-1);
         }
     }
 }

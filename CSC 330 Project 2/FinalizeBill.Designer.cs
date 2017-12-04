@@ -256,7 +256,7 @@
             this.Name = "FinalizeBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FinalizeBill";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinalizeBill_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FinalizeBill_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

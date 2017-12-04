@@ -42,6 +42,7 @@ namespace CSC_330_Project_2
             drinkList.Enabled = false;
             sendKitchen.Enabled = false;
             ordersList.Enabled = false;
+            deleteOrderButton.Enabled = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace CSC_330_Project_2
                     }
                     else
                     {
+                        errorLabel.Text = String.Empty;
                         String placeHolder = String.Empty;
                         int counter = 1;
                         //get order from kitchen variable, and then place placemarkers onto list of customer orders
@@ -103,28 +105,32 @@ namespace CSC_330_Project_2
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            Application.Exit();
+            Environment.Exit(-1);
         }
 
         private void ordersList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(!clearingLists)
             {
-                deleteOrder.Enabled = true;//enable other controls
-                foodList.Enabled = true;
-                drinkList.Enabled = true;
-                sendKitchen.Enabled = true;
-                //get order details, and then clear list and place new order items onto list
-                Order temp = foundOrders[ordersList.SelectedIndex];
-                clearingLists = true;
-                currentOrderList.Items.Clear();
-                clearingLists = false;
-                String[] items = temp.FoodItems;
-                foreach (String str in items)
+                if(ordersList.SelectedItem != null)
                 {
-                    currentOrderList.Items.Add(str);
+                    deleteOrder.Enabled = true;//enable other controls
+                    foodList.Enabled = true;
+                    drinkList.Enabled = true;
+                    sendKitchen.Enabled = true;
+                    deleteOrderButton.Enabled = true;
+                    //get order details, and then clear list and place new order items onto list
+                    Order temp = foundOrders[ordersList.SelectedIndex];
+                    clearingLists = true;
+                    currentOrderList.Items.Clear();
+                    clearingLists = false;
+                    String[] items = temp.FoodItems;
+                    foreach (String str in items)
+                    {
+                        currentOrderList.Items.Add(str);
+                    }
+                    OrderTotalUpdate();//update total
                 }
-                OrderTotalUpdate();//update total
             }
         }
 
@@ -132,16 +138,19 @@ namespace CSC_330_Project_2
         {
             if (!clearingLists)//if lists are not being cleared, begin operations
             {
-                addOrder.Enabled = true;//enable add to order button if disabled
-                deleteOrder.Enabled = false;//disable delete from order button if enabled
-                item = foodList.SelectedItem.ToString();//store selected item
-                itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
-                itemName.Text = item;//output name of item to label
-                itemPrice.Text = itemCost.ToString();//output value of item to label
-                clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
-                drinkList.ClearSelected();//clear selected items from other lists
-                currentOrderList.ClearSelected();
-                clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                if(foodList.SelectedItem != null)
+                {
+                    addOrder.Enabled = true;//enable add to order button if disabled
+                    deleteOrder.Enabled = false;//disable delete from order button if enabled
+                    item = foodList.SelectedItem.ToString();//store selected item
+                    itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
+                    itemName.Text = item;//output name of item to label
+                    itemPrice.Text = itemCost.ToString();//output value of item to label
+                    clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                    drinkList.ClearSelected();//clear selected items from other lists
+                    currentOrderList.ClearSelected();
+                    clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                }
             }
         }
 
@@ -149,16 +158,19 @@ namespace CSC_330_Project_2
         {
             if (!clearingLists)//if lists are not being cleared, begin operations
             {
-                addOrder.Enabled = true;//enable add to order button if disabled
-                deleteOrder.Enabled = false;//disable delete from order button if enabled
-                item = drinkList.SelectedItem.ToString();//store selected item
-                itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
-                itemName.Text = item;//output name of item to label
-                itemPrice.Text = itemCost.ToString();//output value of item to label
-                clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
-                foodList.ClearSelected();//clear selected items from other lists
-                currentOrderList.ClearSelected();
-                clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                if(drinkList.SelectedItem != null)
+                {
+                    addOrder.Enabled = true;//enable add to order button if disabled
+                    deleteOrder.Enabled = false;//disable delete from order button if enabled
+                    item = drinkList.SelectedItem.ToString();//store selected item
+                    itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
+                    itemName.Text = item;//output name of item to label
+                    itemPrice.Text = itemCost.ToString();//output value of item to label
+                    clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                    foodList.ClearSelected();//clear selected items from other lists
+                    currentOrderList.ClearSelected();
+                    clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                }
             }
         }
 
@@ -170,28 +182,30 @@ namespace CSC_330_Project_2
                 deleteOrder.Enabled = true;//disable delete from order button if enabled
                 String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all the keys of drinks and foods from kitchen object
                 String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
-
-                if (foodKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))//if item is a food item
+                if(currentOrderList.SelectedItem != null)
                 {
-                    item = currentOrderList.SelectedItem.ToString();//store selected item
-                    itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
-                    itemName.Text = item;//output name of item to label
-                    itemPrice.Text = itemCost.ToString();//output value of item to label
-                    clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
-                    foodList.ClearSelected();//clear selected items from other lists
-                    drinkList.ClearSelected();
-                    clearingLists = false;//set bool to indicate that we are done clearing the other lists
-                }
-                else if (drinkKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))
-                {
-                    item = currentOrderList.SelectedItem.ToString();//store selected item
-                    itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
-                    itemName.Text = item;//output name of item to label
-                    itemPrice.Text = itemCost.ToString();//output value of item to label
-                    clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
-                    foodList.ClearSelected();//clear selected items from other lists
-                    drinkList.ClearSelected();
-                    clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                    if (foodKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))//if item is a food item
+                    {
+                        item = currentOrderList.SelectedItem.ToString();//store selected item
+                        itemCost = MainScreen.kitchen.FoodAt(item);//get dollar amount of selected item
+                        itemName.Text = item;//output name of item to label
+                        itemPrice.Text = itemCost.ToString();//output value of item to label
+                        clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                        foodList.ClearSelected();//clear selected items from other lists
+                        drinkList.ClearSelected();
+                        clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                    }
+                    else if (drinkKeys.Contains<String>(currentOrderList.SelectedItem.ToString()))
+                    {
+                        item = currentOrderList.SelectedItem.ToString();//store selected item
+                        itemCost = MainScreen.kitchen.DrinkAt(item);//get dollar amount of selected item
+                        itemName.Text = item;//output name of item to label
+                        itemPrice.Text = itemCost.ToString();//output value of item to label
+                        clearingLists = true;//set bool to indicate that we are clearing the selected item on other lists to avoid confusion
+                        foodList.ClearSelected();//clear selected items from other lists
+                        drinkList.ClearSelected();
+                        clearingLists = false;//set bool to indicate that we are done clearing the other lists
+                    }
                 }
             }
         }
@@ -204,6 +218,7 @@ namespace CSC_330_Project_2
 
         private void sendKitchen_Click(object sender, EventArgs e)
         {
+            sendKitchen.BackColor = Color.Green;
             String[] tempList = new String[currentOrderList.Items.Count];//create a temporary list to hold order items
             for(int i = 0; i < currentOrderList.Items.Count; i++)//store all items in current order
             {

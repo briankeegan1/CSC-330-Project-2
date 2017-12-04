@@ -51,8 +51,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.orderTotal = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -317,6 +317,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Total";
             // 
+            // orderTotal
+            // 
+            this.orderTotal.AutoSize = true;
+            this.orderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderTotal.Location = new System.Drawing.Point(125, 15);
+            this.orderTotal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.orderTotal.Name = "orderTotal";
+            this.orderTotal.Size = new System.Drawing.Size(0, 20);
+            this.orderTotal.TabIndex = 4;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -327,16 +337,6 @@
             this.label5.Size = new System.Drawing.Size(105, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Order Total: $";
-            // 
-            // orderTotal
-            // 
-            this.orderTotal.AutoSize = true;
-            this.orderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderTotal.Location = new System.Drawing.Point(125, 15);
-            this.orderTotal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.orderTotal.Name = "orderTotal";
-            this.orderTotal.Size = new System.Drawing.Size(0, 20);
-            this.orderTotal.TabIndex = 4;
             // 
             // backButton
             // 
@@ -353,6 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(656, 575);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox5);

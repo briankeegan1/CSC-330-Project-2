@@ -48,19 +48,19 @@ namespace CSC_330_Project_2
             next.Show();//show next form
         }
 
-        private void ReservationMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MainScreen.frontDesk.UpdateFiles();
-            MainScreen.kitchen.UpdateFiles();
-            this.Dispose();
-            Application.Exit();
-        }
-
         private void roomInquiry_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form next = new RoomInquiry(this);
             next.Show();
+        }
+
+        private void ReservationMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainScreen.frontDesk.UpdateFiles();
+            MainScreen.kitchen.UpdateFiles();
+            this.Dispose();
+            Environment.Exit(-1);
         }
     }
 }
