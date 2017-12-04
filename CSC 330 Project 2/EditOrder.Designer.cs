@@ -57,6 +57,8 @@
             this.orderTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,12 +67,13 @@
             this.group1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(421, 12);
+            this.errorLabel.Location = new System.Drawing.Point(429, 12);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 27;
@@ -78,7 +81,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(290, 24);
+            this.button1.Location = new System.Drawing.Point(298, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 61);
             this.button1.TabIndex = 26;
@@ -93,7 +96,7 @@
             this.groupBox4.Controls.Add(this.name);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(44, 12);
+            this.groupBox4.Location = new System.Drawing.Point(52, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(240, 79);
             this.groupBox4.TabIndex = 25;
@@ -146,7 +149,7 @@
             this.groupBox3.Controls.Add(this.deleteOrder);
             this.groupBox3.Controls.Add(this.addOrder);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Location = new System.Drawing.Point(392, 409);
+            this.groupBox3.Location = new System.Drawing.Point(400, 409);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(250, 158);
             this.groupBox3.TabIndex = 24;
@@ -209,7 +212,7 @@
             this.groupBox2.BackColor = System.Drawing.Color.Maroon;
             this.groupBox2.Controls.Add(this.currentOrderList);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(564, 97);
+            this.groupBox2.Location = new System.Drawing.Point(572, 97);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 306);
@@ -234,7 +237,7 @@
             this.groupBox1.Controls.Add(this.itemName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(12, 409);
+            this.groupBox1.Location = new System.Drawing.Point(20, 409);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(307, 96);
             this.groupBox1.TabIndex = 23;
@@ -285,7 +288,7 @@
             // 
             this.group2.BackColor = System.Drawing.Color.RosyBrown;
             this.group2.Controls.Add(this.drinkList);
-            this.group2.Location = new System.Drawing.Point(347, 97);
+            this.group2.Location = new System.Drawing.Point(355, 97);
             this.group2.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.group2.Name = "group2";
             this.group2.Size = new System.Drawing.Size(200, 306);
@@ -307,7 +310,7 @@
             this.group1.BackColor = System.Drawing.Color.Maroon;
             this.group1.Controls.Add(this.foodList);
             this.group1.ForeColor = System.Drawing.SystemColors.Control;
-            this.group1.Location = new System.Drawing.Point(129, 97);
+            this.group1.Location = new System.Drawing.Point(137, 97);
             this.group1.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.group1.Name = "group1";
             this.group1.Size = new System.Drawing.Size(200, 306);
@@ -338,7 +341,7 @@
             this.groupBox5.BackColor = System.Drawing.Color.Maroon;
             this.groupBox5.Controls.Add(this.ordersList);
             this.groupBox5.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox5.Location = new System.Drawing.Point(6, 97);
+            this.groupBox5.Location = new System.Drawing.Point(14, 97);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(110, 136);
             this.groupBox5.TabIndex = 28;
@@ -351,7 +354,7 @@
             this.groupBox6.Controls.Add(this.orderTotal);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox6.Location = new System.Drawing.Point(12, 518);
+            this.groupBox6.Location = new System.Drawing.Point(20, 518);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(307, 51);
             this.groupBox6.TabIndex = 29;
@@ -382,7 +385,7 @@
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(6, 12);
+            this.backButton.Location = new System.Drawing.Point(14, 12);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(32, 23);
             this.backButton.TabIndex = 30;
@@ -390,11 +393,35 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(407, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(420, 73);
+            this.panel1.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.RosyBrown;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(411, 61);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Directions: To edit an order, enter the name on the reservation, and reservation " +
+    "room number. Then select an order from the left-hand list to view contents and e" +
+    "dit.";
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 581);
+            this.ClientSize = new System.Drawing.Size(840, 581);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -422,6 +449,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +486,7 @@
         private System.Windows.Forms.Label orderTotal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
     }
 }

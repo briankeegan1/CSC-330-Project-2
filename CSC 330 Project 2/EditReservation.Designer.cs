@@ -63,7 +63,7 @@
             this.groupBox2.Controls.Add(this.roomList);
             this.groupBox2.Controls.Add(this.checkIn);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(19, 189);
+            this.groupBox2.Location = new System.Drawing.Point(16, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(318, 119);
             this.groupBox2.TabIndex = 12;
@@ -76,7 +76,7 @@
             this.roomList.Location = new System.Drawing.Point(6, 19);
             this.roomList.Name = "roomList";
             this.roomList.Size = new System.Drawing.Size(120, 95);
-            this.roomList.TabIndex = 10;
+            this.roomList.TabIndex = 3;
             this.roomList.SelectedIndexChanged += new System.EventHandler(this.roomList_SelectedIndexChanged);
             // 
             // checkIn
@@ -85,7 +85,7 @@
             this.checkIn.Location = new System.Drawing.Point(162, 64);
             this.checkIn.Name = "checkIn";
             this.checkIn.Size = new System.Drawing.Size(100, 20);
-            this.checkIn.TabIndex = 9;
+            this.checkIn.TabIndex = 4;
             this.checkIn.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
@@ -106,7 +106,7 @@
             this.groupBox1.Controls.Add(this.number);
             this.groupBox1.Controls.Add(this.name);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(19, 82);
+            this.groupBox1.Location = new System.Drawing.Point(16, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(227, 100);
             this.groupBox1.TabIndex = 11;
@@ -140,7 +140,7 @@
             this.number.Location = new System.Drawing.Point(111, 57);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(100, 20);
-            this.number.TabIndex = 5;
+            this.number.TabIndex = 1;
             this.number.TextChanged += new System.EventHandler(this.number_TextChanged);
             // 
             // name
@@ -148,16 +148,16 @@
             this.name.Location = new System.Drawing.Point(111, 24);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(100, 20);
-            this.name.TabIndex = 4;
+            this.name.TabIndex = 0;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(252, 110);
+            this.button1.Location = new System.Drawing.Point(249, 110);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 44);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -199,10 +199,10 @@
             // changeRes
             // 
             this.changeRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeRes.Location = new System.Drawing.Point(357, 189);
+            this.changeRes.Location = new System.Drawing.Point(354, 189);
             this.changeRes.Name = "changeRes";
             this.changeRes.Size = new System.Drawing.Size(75, 44);
-            this.changeRes.TabIndex = 13;
+            this.changeRes.TabIndex = 5;
             this.changeRes.Text = "Change";
             this.changeRes.UseVisualStyleBackColor = true;
             this.changeRes.Click += new System.EventHandler(this.changeRes_Click);
@@ -210,10 +210,10 @@
             // deleteRes
             // 
             this.deleteRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteRes.Location = new System.Drawing.Point(357, 253);
+            this.deleteRes.Location = new System.Drawing.Point(354, 253);
             this.deleteRes.Name = "deleteRes";
             this.deleteRes.Size = new System.Drawing.Size(75, 44);
-            this.deleteRes.TabIndex = 14;
+            this.deleteRes.TabIndex = 6;
             this.deleteRes.Text = "Delete";
             this.deleteRes.UseVisualStyleBackColor = true;
             this.deleteRes.Click += new System.EventHandler(this.deleteRes_Click);
@@ -228,7 +228,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Location = new System.Drawing.Point(19, 315);
+            this.groupBox3.Location = new System.Drawing.Point(16, 315);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(318, 115);
             this.groupBox3.TabIndex = 15;
@@ -304,7 +304,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(334, 110);
+            this.errorLabel.Location = new System.Drawing.Point(331, 110);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 16;

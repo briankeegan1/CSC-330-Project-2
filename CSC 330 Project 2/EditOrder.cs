@@ -320,5 +320,6 @@ namespace CSC_330_Project_2
             this.Dispose();
             previous.Show();
         }
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.itemPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +55,8 @@
             this.orderTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group1.SuspendLayout();
@@ -61,6 +64,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -135,7 +139,7 @@
             this.drinkList.Location = new System.Drawing.Point(6, 19);
             this.drinkList.Name = "drinkList";
             this.drinkList.Size = new System.Drawing.Size(188, 277);
-            this.drinkList.TabIndex = 2;
+            this.drinkList.TabIndex = 4;
             this.drinkList.SelectedIndexChanged += new System.EventHandler(this.drinkList_SelectedIndexChanged);
             // 
             // group1
@@ -156,7 +160,7 @@
             this.foodList.Location = new System.Drawing.Point(6, 19);
             this.foodList.Name = "foodList";
             this.foodList.Size = new System.Drawing.Size(188, 277);
-            this.foodList.TabIndex = 1;
+            this.foodList.TabIndex = 3;
             this.foodList.SelectedIndexChanged += new System.EventHandler(this.foodList_SelectedIndexChanged);
             // 
             // groupBox2
@@ -177,7 +181,7 @@
             this.currentOrderList.Location = new System.Drawing.Point(6, 19);
             this.currentOrderList.Name = "currentOrderList";
             this.currentOrderList.Size = new System.Drawing.Size(188, 277);
-            this.currentOrderList.TabIndex = 2;
+            this.currentOrderList.TabIndex = 5;
             this.currentOrderList.SelectedIndexChanged += new System.EventHandler(this.currentOrderList_SelectedIndexChanged);
             // 
             // groupBox3
@@ -199,10 +203,10 @@
             this.sendKitchen.AutoSize = true;
             this.sendKitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendKitchen.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.sendKitchen.Location = new System.Drawing.Point(49, 89);
+            this.sendKitchen.Location = new System.Drawing.Point(52, 89);
             this.sendKitchen.Name = "sendKitchen";
             this.sendKitchen.Size = new System.Drawing.Size(146, 30);
-            this.sendKitchen.TabIndex = 10;
+            this.sendKitchen.TabIndex = 8;
             this.sendKitchen.Text = "Send To Kitchen";
             this.sendKitchen.UseVisualStyleBackColor = true;
             this.sendKitchen.Click += new System.EventHandler(this.sendKitchen_Click);
@@ -212,11 +216,11 @@
             this.deleteOrder.AutoSize = true;
             this.deleteOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.deleteOrder.Location = new System.Drawing.Point(49, 55);
+            this.deleteOrder.Location = new System.Drawing.Point(34, 55);
             this.deleteOrder.Name = "deleteOrder";
-            this.deleteOrder.Size = new System.Drawing.Size(146, 30);
-            this.deleteOrder.TabIndex = 9;
-            this.deleteOrder.Text = "Delete from Order";
+            this.deleteOrder.Size = new System.Drawing.Size(182, 30);
+            this.deleteOrder.TabIndex = 7;
+            this.deleteOrder.Text = "Delete Item from Order";
             this.deleteOrder.UseVisualStyleBackColor = true;
             this.deleteOrder.Click += new System.EventHandler(this.deleteOrder_Click);
             // 
@@ -225,10 +229,10 @@
             this.addOrder.AutoSize = true;
             this.addOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addOrder.Location = new System.Drawing.Point(67, 19);
+            this.addOrder.Location = new System.Drawing.Point(70, 19);
             this.addOrder.Name = "addOrder";
             this.addOrder.Size = new System.Drawing.Size(110, 30);
-            this.addOrder.TabIndex = 8;
+            this.addOrder.TabIndex = 6;
             this.addOrder.Text = "Add to Order";
             this.addOrder.UseVisualStyleBackColor = true;
             this.addOrder.Click += new System.EventHandler(this.addOrder_Click);
@@ -274,7 +278,7 @@
             this.number.Location = new System.Drawing.Point(117, 45);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(100, 20);
-            this.number.TabIndex = 9;
+            this.number.TabIndex = 1;
             this.number.TextChanged += new System.EventHandler(this.number_TextChanged);
             // 
             // name
@@ -282,7 +286,7 @@
             this.name.Location = new System.Drawing.Point(117, 12);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(100, 20);
-            this.name.TabIndex = 8;
+            this.name.TabIndex = 0;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
             // button1
@@ -291,7 +295,7 @@
             this.button1.Location = new System.Drawing.Point(292, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 61);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -344,17 +348,39 @@
             this.backButton.Location = new System.Drawing.Point(8, 12);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(32, 23);
-            this.backButton.TabIndex = 20;
+            this.backButton.TabIndex = 9;
             this.backButton.Text = "<--";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(402, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(420, 73);
+            this.panel1.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.RosyBrown;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(411, 61);
+            this.label6.TabIndex = 0;
+            this.label6.Text = resources.GetString("label6.Text");
             // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(656, 575);
+            this.ClientSize = new System.Drawing.Size(828, 567);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
@@ -380,6 +406,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +440,7 @@
         private System.Windows.Forms.Label orderTotal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -38,10 +38,10 @@
             // 
             this.menuButton.AutoSize = true;
             this.menuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButton.Location = new System.Drawing.Point(117, 72);
+            this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton.Location = new System.Drawing.Point(116, 62);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(69, 34);
+            this.menuButton.Size = new System.Drawing.Size(91, 41);
             this.menuButton.TabIndex = 5;
             this.menuButton.Text = "Menu";
             this.menuButton.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@
             // 
             this.editButton.AutoSize = true;
             this.editButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.Location = new System.Drawing.Point(79, 152);
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Location = new System.Drawing.Point(44, 156);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(165, 34);
+            this.editButton.Size = new System.Drawing.Size(234, 41);
             this.editButton.TabIndex = 4;
             this.editButton.Text = "Edit/Delete Order";
             this.editButton.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             // 
             this.createButton.AutoSize = true;
             this.createButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createButton.Location = new System.Drawing.Point(97, 112);
+            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createButton.Location = new System.Drawing.Point(70, 109);
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(129, 34);
+            this.createButton.Size = new System.Drawing.Size(182, 41);
             this.createButton.TabIndex = 3;
             this.createButton.Text = "Create Order";
             this.createButton.UseVisualStyleBackColor = true;

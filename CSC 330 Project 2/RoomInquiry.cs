@@ -12,9 +12,7 @@ namespace CSC_330_Project_2
 {
     public partial class RoomInquiry : Form
     {
-        private String guestName;
         private int roomNumber;
-        private DateTime checkIn;
         private decimal nightlyRate;
         private bool availability;
         Form previous;
@@ -61,7 +59,6 @@ namespace CSC_330_Project_2
             MainScreen.frontDesk.UpdateFiles();
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
-            //Application.Exit();
             Environment.Exit(-1);
         }
 

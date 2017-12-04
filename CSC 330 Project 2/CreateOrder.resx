@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Directions: To create an order, enter the name on the reservation, and reservation room number. Then select and add items from either of the list, and then add them to your order. Finalize the order by sending the order to the kitchen.</value>
+  </data>
 </root>
