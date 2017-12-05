@@ -41,20 +41,6 @@ namespace CSC_330_Project_2
             sendKitchen.Enabled = false;
         }
 
-        private void addOrder_Click(object sender, EventArgs e)
-        {
-            currentOrderList.Items.Add(item);
-            orderTotalUpdate();
-        }
-
-        private void deleteOrder_Click(object sender, EventArgs e)
-        {
-            clearingLists = true;
-            currentOrderList.Items.RemoveAt(currentOrderList.SelectedIndex);
-            clearingLists = false;
-            orderTotalUpdate();
-        }
-
         private void foodList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(!clearingLists)//if lists are not being cleared, begin operations
@@ -139,37 +125,6 @@ namespace CSC_330_Project_2
             Environment.Exit(-1);
         }
 
-        private void sendKitchen_Click(object sender, EventArgs e)
-        {
-            if(currentOrderList.Items.Count == 0)
-            {
-                //do nothing
-            }
-            else
-            {
-                string[] orderItems = new string[currentOrderList.Items.Count];
-                for (int i = 0; i < currentOrderList.Items.Count; i++)
-                {
-                    orderItems[i] = currentOrderList.Items[i].ToString();
-                }
-                decimal total = 0;
-                String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all the keys of drinks and foods from kitchen object
-                String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
-                for (int i = 0; i < currentOrderList.Items.Count; i++)
-                {
-                    if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
-                    {
-                        total = total + MainScreen.kitchen.FoodAt(currentOrderList.Items[i].ToString());
-                    }
-                    else if (drinkKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a drink item
-                    {
-                        total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
-                    }
-                }
-                MainScreen.kitchen.CreateOrder(new Order(Int32.Parse(number.Text), orderItems, total));
-            }
-        }
-
         private void name_TextChanged(object sender, EventArgs e)
         {
             guestName = name.Text;
@@ -216,6 +171,7 @@ namespace CSC_330_Project_2
                     sendKitchen.Enabled = true;
                     errorLabel.Text = "";
                     button1.BackColor = Color.Green;
+                    break;
                 }
                 else//if customer is never found, message will be displayed
                 {
@@ -251,6 +207,51 @@ namespace CSC_330_Project_2
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             previous.Show();
+        }
+
+        private void addOrder_Click_1(object sender, EventArgs e)
+        {
+            currentOrderList.Items.Add(item);
+            orderTotalUpdate();
+        }
+
+        private void deleteOrder_Click_1(object sender, EventArgs e)
+        {
+            clearingLists = true;
+            currentOrderList.Items.RemoveAt(currentOrderList.SelectedIndex);
+            clearingLists = false;
+            orderTotalUpdate();
+        }
+
+        private void sendKitchen_Click_1(object sender, EventArgs e)
+        {
+            if (currentOrderList.Items.Count == 0)
+            {
+                //do nothing
+            }
+            else
+            {
+                string[] orderItems = new string[currentOrderList.Items.Count];
+                for (int i = 0; i < currentOrderList.Items.Count; i++)
+                {
+                    orderItems[i] = currentOrderList.Items[i].ToString();
+                }
+                decimal total = 0;
+                String[] foodKeys = MainScreen.kitchen.GetFoodKeys();//get all the keys of drinks and foods from kitchen object
+                String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
+                for (int i = 0; i < currentOrderList.Items.Count; i++)
+                {
+                    if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
+                    {
+                        total = total + MainScreen.kitchen.FoodAt(currentOrderList.Items[i].ToString());
+                    }
+                    else if (drinkKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a drink item
+                    {
+                        total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
+                    }
+                }
+                MainScreen.kitchen.CreateOrder(new Order(Int32.Parse(number.Text), orderItems, total));
+            }
         }
     }
 }

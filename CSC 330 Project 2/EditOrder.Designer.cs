@@ -71,7 +71,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(506, 71);
+            this.errorLabel.Location = new System.Drawing.Point(161, 7);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 27;
@@ -110,17 +110,21 @@
             // 
             // number
             // 
+            this.number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number.Location = new System.Drawing.Point(117, 46);
             this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(121, 25);
+            this.number.Size = new System.Drawing.Size(121, 26);
             this.number.TabIndex = 1;
             this.number.TextChanged += new System.EventHandler(this.number_TextChanged_1);
             // 
             // name
             // 
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.Location = new System.Drawing.Point(117, 16);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(121, 25);
+            this.name.Size = new System.Drawing.Size(121, 26);
             this.name.TabIndex = 0;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged_1);
             // 
@@ -205,6 +209,7 @@
             this.deleteOrder.TabIndex = 8;
             this.deleteOrder.Text = "Delete from Order";
             this.deleteOrder.UseVisualStyleBackColor = false;
+            this.deleteOrder.Click += new System.EventHandler(this.deleteOrder_Click);
             // 
             // addOrder
             // 
@@ -423,7 +428,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(263, 7);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(719, 58);
             this.label6.TabIndex = 31;

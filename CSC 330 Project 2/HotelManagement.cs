@@ -231,6 +231,7 @@ namespace CSC_330_Project_2
         Dictionary<String, decimal> foodItems;
         Dictionary<String, decimal> drinksItems;
         private List<Order> customerOrders;
+
         public Kitchen()
         {
             customerOrders = new List<Order>();
@@ -313,17 +314,20 @@ namespace CSC_330_Project_2
                 }
             }
         }
+        //create order
         public void CreateOrder(Order customerOrder)
         {
             customerOrders.Add(customerOrder);//add order to list
             MainScreen.frontDesk.ReservationInfo(customerOrder.RoomNumber).TotalBill = MainScreen.frontDesk.ReservationInfo(customerOrder.RoomNumber).TotalBill + customerOrder.OrderTotal;//update guest account
         }
+        //edit order 
         public void EditOrder(Order originalOrder, Order editedOrder)
         {
             int orig = customerOrders.IndexOf(originalOrder);//get idex of original order
             customerOrders[orig].FoodItems = editedOrder.FoodItems;//update information of order
             customerOrders[orig].OrderTotal = editedOrder.OrderTotal;
         }
+        //delete order from kitchen
         public void DeleteOrder(Order order)
         {
             int orig = customerOrders.IndexOf(order);//get idex of original order

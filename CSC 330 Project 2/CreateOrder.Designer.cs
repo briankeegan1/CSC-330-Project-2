@@ -356,6 +356,7 @@
             this.sendKitchen.TabIndex = 8;
             this.sendKitchen.Text = "Send To Kitchen";
             this.sendKitchen.UseVisualStyleBackColor = false;
+            this.sendKitchen.Click += new System.EventHandler(this.sendKitchen_Click_1);
             // 
             // deleteOrder
             // 
@@ -370,6 +371,7 @@
             this.deleteOrder.TabIndex = 7;
             this.deleteOrder.Text = "Delete Item from Order";
             this.deleteOrder.UseVisualStyleBackColor = false;
+            this.deleteOrder.Click += new System.EventHandler(this.deleteOrder_Click_1);
             // 
             // addOrder
             // 
@@ -384,6 +386,7 @@
             this.addOrder.TabIndex = 6;
             this.addOrder.Text = "Add to Order";
             this.addOrder.UseVisualStyleBackColor = false;
+            this.addOrder.Click += new System.EventHandler(this.addOrder_Click_1);
             // 
             // label6
             // 

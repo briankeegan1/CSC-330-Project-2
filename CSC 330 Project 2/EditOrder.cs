@@ -86,6 +86,7 @@ namespace CSC_330_Project_2
                             counter++;
                         }
                     }
+                    break;
                 }
                 else//if customer is never found, message will be displayed
                 {
@@ -322,6 +323,34 @@ namespace CSC_330_Project_2
             MainScreen.kitchen.UpdateFiles();
             this.Dispose();
             previous.Show();
+        }
+
+        private void deleteOrder_Click(object sender, EventArgs e)
+        {
+            clearingLists = true;
+            currentOrderList.Items.RemoveAt(currentOrderList.SelectedIndex);
+            clearingLists = false;
+            orderTotalUpdate();
+        }
+
+        private Decimal orderTotalUpdate()
+        {
+            decimal total = 0;
+            String[] foodKeys = MainScreen.kitchen.GetFoodKeys();
+            String[] drinkKeys = MainScreen.kitchen.GetDrinkKeys();
+            for (int i = 0; i < currentOrderList.Items.Count; i++)
+            {
+                if (foodKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a food item
+                {
+                    total = total + MainScreen.kitchen.FoodAt(currentOrderList.Items[i].ToString());
+                }
+                else if (drinkKeys.Contains<String>(currentOrderList.Items[i].ToString()))//if item is a drink item
+                {
+                    total = total + MainScreen.kitchen.DrinkAt(currentOrderList.Items[i].ToString());
+                }
+            }
+            orderTotal.Text = total.ToString();
+            return total;
         }
     }
 }
