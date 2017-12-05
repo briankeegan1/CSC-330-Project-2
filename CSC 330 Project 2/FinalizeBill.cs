@@ -53,6 +53,7 @@ namespace CSC_330_Project_2
                 if ((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
                     errorLabel.Text = "Entered guest\nnever checked\nin.";
+                    button1.BackColor = Color.Red;
                     break;
                 }
                 else if ((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && (MainScreen.frontDesk.ReservationAt(i).CheckedIn))//if guest is checked in
@@ -63,6 +64,12 @@ namespace CSC_330_Project_2
                     MiscCharge.Text = "$" + Math.Round(tempTotal, 2);//output miscellaneous charges that were added by staff
                     double totalDays = (System.DateTime.Now - MainScreen.frontDesk.ReservationInfo(roomNumber).CheckInDateTime).TotalDays;
                     roomCharge.Text = "$" + Math.Round((decimal)totalDays * MainScreen.frontDesk.RoomInfo(roomNumber).NightRate, 2);
+                    button1.BackColor = Color.Green;
+                }
+                else
+                {
+                    errorLabel.Text = "Invalid information\ninputted.";
+                    button1.BackColor = Color.Red;
                 }
             }
         }

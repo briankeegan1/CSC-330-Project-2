@@ -51,11 +51,11 @@
             this.orderTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.sendKitchen = new System.Windows.Forms.Button();
             this.deleteOrder = new System.Windows.Forms.Button();
             this.addOrder = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group1.SuspendLayout();
@@ -271,9 +271,11 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(510, 66);
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorLabel.Location = new System.Drawing.Point(161, 12);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.Size = new System.Drawing.Size(0, 16);
             this.errorLabel.TabIndex = 19;
             // 
             // groupBox5
@@ -325,19 +327,6 @@
             this.button4.Text = "Back";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(449, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(445, 129);
-            this.label6.TabIndex = 0;
-            this.label6.Text = resources.GetString("label6.Text");
             // 
             // groupBox3
             // 
@@ -396,6 +385,19 @@
             this.addOrder.Text = "Add to Order";
             this.addOrder.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(449, 26);
+            this.label6.Margin = new System.Windows.Forms.Padding(3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(445, 129);
+            this.label6.TabIndex = 39;
+            this.label6.Text = resources.GetString("label6.Text");
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,8 +405,8 @@
             this.BackColor = System.Drawing.Color.Maroon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 492);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.errorLabel);
@@ -459,10 +461,10 @@
         private System.Windows.Forms.Label orderTotal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button sendKitchen;
         private System.Windows.Forms.Button deleteOrder;
         private System.Windows.Forms.Button addOrder;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -71,11 +71,15 @@ namespace CSC_330_Project_2
             if(dateTimePicker1.Value < dateTimePicker1.MinDate || textBox1.Text == null || roomList.SelectedItem == null)
             {
                 errorLabel.Text = "Not all data\nfields have been\nfilled.\nReservation creation\nfailed.";
+                createReservationButton.BackColor = Color.Red;
             }
             else
             {
                 MainScreen.frontDesk.CreateReservation(guestName, roomNumber, checkIn, 0);//create new reservations
                 MainScreen.frontDesk.UpdateFiles();//update files
+                createReservationButton.BackColor = Color.Green;
+                dateTimePicker1.Value = System.DateTime.Now;//reset reservation field values
+                textBox1.Text = String.Empty;
                 ReloadList();
             }
         }

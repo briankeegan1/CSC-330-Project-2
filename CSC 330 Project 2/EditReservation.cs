@@ -79,7 +79,7 @@ namespace CSC_330_Project_2
                 if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
                     errorLabel.Text = String.Empty;
-                    button1.BackColor = Color.White;
+                    button1.BackColor = Color.Green;
                     checkIn.Enabled = true;//enable the datetimePicker
                     checkIn.Value = MainScreen.frontDesk.ReservationAt(i).CheckInDateTime;//get value of reservation
                     roomList.Enabled = true;//enable the room list
@@ -89,15 +89,14 @@ namespace CSC_330_Project_2
                 }
                 else if((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if guest already checked in
                 {
-                    //reservation not found
-                    button1.BackColor = Color.SkyBlue;
+                    button1.BackColor = Color.Red;
                     errorLabel.Text = "Guest already\nchecked in.\nReservation cannot\n be modified";
                     break;
                 }
                 else
                 {
                     errorLabel.Text = "Invalid Information\nentered.";
-                    button1.BackColor = Color.PaleVioletRed;
+                    button1.BackColor = Color.Red;
                 }
             }
         }

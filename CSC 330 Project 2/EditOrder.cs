@@ -52,6 +52,7 @@ namespace CSC_330_Project_2
                 if ((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && !MainScreen.frontDesk.ReservationAt(i).CheckedIn)//if entered information was correct, and guest not checkedIn
                 {
                     errorLabel.Text = "Entered guest\nnever checked\nin.";
+                    button1.BackColor = Color.Red;
                     break;
                 }
                 else if ((MainScreen.frontDesk.ReservationAt(i).CustomerName == guestName) && (MainScreen.frontDesk.ReservationAt(i).RoomNumber == roomNumber) && (MainScreen.frontDesk.ReservationAt(i).CheckedIn))//if guest is checked in
@@ -61,6 +62,7 @@ namespace CSC_330_Project_2
                     ordersList.Enabled = true;
                     button1.Enabled = false;
                     errorLabel.Text = "";
+                    button1.BackColor = Color.Green;
                     foundOrders = MainScreen.kitchen.AllOrderInfo(roomNumber);//get list of all orders for room number
                     if (foundOrders.Count == 0)//if customer never made an order to the kitchen, output error and lock controls
                     {
@@ -88,6 +90,7 @@ namespace CSC_330_Project_2
                 else//if customer is never found, message will be displayed
                 {
                     errorLabel.Text = "Entered reservation\ndoes not exist.";
+                    button1.BackColor = Color.Red;
                 }
             }
         }
